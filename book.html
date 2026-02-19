@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahadev Baburao Karad Auto Service – Auto Rickshaw in Shirdi | Sai Baba Darshan Tours</title>
+<meta name="description" content="Reliable, affordable auto rickshaw service in Shirdi for Sai Baba devotees. Local rides, full darshan tours, pickup & drop. Call 9307062992.">
+<meta name="keywords" content="auto rickshaw in Shirdi, Shirdi local transport, Sai Baba darshan auto service, Shirdi auto booking, Sai Baba temple transport">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #FF6B00;
+    --saffron-light: #FF8C3A;
+    --saffron-deep: #D45500;
+    --gold: #C9940A;
+    --gold-light: #F0C842;
+    --gold-pale: #FFF3C4;
+    --cream: #FDF8EE;
+    --warm-white: #FFFDF7;
+    --maroon: #7B1D1D;
+    --brown-dark: #3D1A00;
+    --text-dark: #1A0A00;
+    --text-mid: #4A2800;
+    --text-light: #7A5A3A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Hind', sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* OM SYMBOL BACKGROUND */
+  .om-bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80vw;
+    color: rgba(201,148,10,0.03);
+    pointer-events: none;
+    z-index: 0;
+    font-family: serif;
+    line-height: 1;
+    user-select: none;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(26,10,0,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--gold);
+    padding: 0 1rem;
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--saffron), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .nav-logo-text {
+    color: var(--warm-white);
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    line-height: 1.2;
+  }
+
+  .nav-logo-text span {
+    color: var(--gold-light);
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  .nav-call {
+    background: var(--saffron);
+    color: white !important;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-call:hover { background: var(--saffron-deep) !important; color: white !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* Mobile nav */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0; right: 0;
+    background: rgba(26,10,0,0.99);
+    z-index: 999;
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .mobile-nav.open { display: block; }
+
+  .mobile-nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .mobile-nav a:last-child { border-bottom: none; }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #1A0A00 0%, #3D1800 40%, #1A0A00 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 20% 50%, rgba(255,107,0,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(201,148,10,0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 100%, rgba(255,107,0,0.08) 0%, transparent 50%);
+  }
+
+  .hero-mandala {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.04;
+    animation: rotate 60s linear infinite;
+  }
+
+  @keyframes rotate { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,148,10,0.15);
+    border: 1px solid rgba(201,148,10,0.4);
+    color: var(--gold-light);
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 0.8s ease;
+  }
+
+  .hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 900;
+    color: var(--warm-white);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease 0.2s both;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  }
+
+  .hero h1 .highlight {
+    background: linear-gradient(90deg, var(--saffron), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    color: rgba(255,255,255,0.75);
+    max-width: 500px;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 0.8s ease 0.4s both;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeInUp 0.8s ease 0.6s both;
+    margin-bottom: 3rem;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--saffron), var(--saffron-deep));
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 20px rgba(255,107,0,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.03em;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(255,107,0,0.5);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--gold-light);
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    border: 2px solid var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background: var(--gold);
+    color: var(--brown-dark);
+  }
+
+  .hero-trust {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease 0.8s both;
+  }
+
+  .trust-item {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .trust-item .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold-light);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ===== SECTION STYLES ===== */
+  section { position: relative; z-index: 1; }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    color: var(--saffron);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.2;
+  }
+
+  .section-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--saffron), var(--gold));
+    margin: 1rem auto 0;
+    border-radius: 2px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ===== SERVICES ===== */
+  #services {
+    padding: 5rem 1.5rem;
+    background: var(--cream);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    border: 1px solid rgba(201,148,10,0.15);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--saffron), var(--gold));
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(255,107,0,0.12);
+  }
+
+  .service-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, rgba(255,107,0,0.1), rgba(201,148,10,0.1));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .service-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+  }
+
+  .service-card p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+  .service-cta {
+    color: var(--saffron);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== PRICING ===== */
+  #pricing {
+    padding: 5rem 1.5rem;
+    background: linear-gradient(160deg, #1A0A00, #3D1800);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  #pricing::before {
+    content: '₹';
+    position: absolute;
+    font-size: 40vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255,255,255,0.02);
+    font-family: 'Cinzel', serif;
+    pointer-events: none;
+  }
+
+  #pricing .section-title { color: white; }
+
+  .pricing-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--saffron), var(--gold));
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.3rem, 4vw, 2rem);
+    font-weight: 700;
+    padding: 1.5rem 3rem;
+    border-radius: 16px;
+    margin: 2rem auto;
+    box-shadow: 0 8px 32px rgba(255,107,0,0.3);
+    max-width: 500px;
+  }
+
+  .pricing-note {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .pricing-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 800px;
+    margin: 2rem auto;
+  }
+
+  .pricing-item {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,148,10,0.25);
+    border-radius: 12px;
+    padding: 1.2rem;
+    color: white;
+  }
+
+  .pricing-item .label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .pricing-item .value {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  /* ===== HOTEL BOOKING ===== */
+  #hotel {
+    padding: 5rem 1.5rem;
+    background: var(--warm-white);
+  }
+
+  .hotel-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hotel-text .section-header { text-align: left; }
+  .hotel-text .section-divider { margin-left: 0; }
+
+  .hotel-text p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .hotel-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-bottom: 2rem;
+  }
+
+  .hotel-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--text-mid);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .hotel-features li::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+
+  .hotel-visual {
+    background: linear-gradient(135deg, rgba(255,107,0,0.08), rgba(201,148,10,0.1));
+    border: 1px solid rgba(201,148,10,0.2);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+  }
+
+  .hotel-visual .big-emoji { font-size: 4rem; margin-bottom: 1rem; display: block; }
+
+  .hotel-visual h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .hotel-visual p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ===== TESTIMONIALS ===== */
+  #testimonials {
+    padding: 5rem 1.5rem;
+    background: var(--cream);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(201,148,10,0.15);
+    position: relative;
+  }
+
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 1.5rem;
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--saffron);
+    font-family: Georgia, serif;
+    opacity: 0.3;
+  }
+
+  .stars {
+    color: var(--gold-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .testimonial-text {
+    color: var(--text-mid);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--saffron), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: 'Cinzel', serif;
+    flex-shrink: 0;
+  }
+
+  .author-info { font-size: 0.85rem; }
+  .author-name { font-weight: 700; color: var(--text-dark); }
+  .author-place { color: var(--text-light); font-size: 0.8rem; }
+
+  /* ===== CONTACT ===== */
+  #contact {
+    padding: 5rem 1.5rem;
+    background: linear-gradient(160deg, #1A0A00, #3D1800);
+  }
+
+  #contact .section-title { color: white; }
+
+  .contact-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .contact-info { }
+
+  .contact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1.2rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,148,10,0.2);
+    border-radius: 12px;
+  }
+
+  .contact-card-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--saffron), var(--gold));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .contact-card-text { }
+  .contact-card-label { color: rgba(255,255,255,0.5); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.2rem; }
+  .contact-card-value { color: white; font-weight: 600; font-size: 1rem; text-decoration: none; }
+  .contact-card-value:hover { color: var(--gold-light); }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .form-group label {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(201,148,10,0.25);
+    color: white;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-family: 'Hind', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+
+  .form-group select option { background: #1A0A00; }
+
+  .form-group textarea { height: 100px; resize: vertical; }
+
+  .btn-submit {
+    background: linear-gradient(135deg, var(--saffron), var(--saffron-deep));
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 50px;
+    font-family: 'Hind', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(255,107,0,0.3);
+    letter-spacing: 0.05em;
+  }
+
+  .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(255,107,0,0.4);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #0D0500;
+    padding: 3rem 1.5rem 2rem;
+    border-top: 1px solid rgba(201,148,10,0.2);
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: var(--gold-light);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  .footer-tagline {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold-light); }
+
+  .footer-bottom {
+    color: rgba(255,255,255,0.25);
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 1.5rem;
+  }
+
+  .om-footer { color: var(--gold-light); font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+
+  /* ===== FLOATING BUTTONS ===== */
+  .floating-btns {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-end;
+  }
+
+  .float-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .float-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  .float-whatsapp {
+    background: #25D366;
+    color: white;
+  }
+
+  .float-call {
+    background: var(--saffron);
+    color: white;
+  }
+
+  .float-icon { font-size: 1.1rem; }
+
+  /* ===== TRUST BAR ===== */
+  .trust-bar {
+    background: linear-gradient(90deg, var(--saffron), var(--gold));
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+
+    .hotel-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+    .float-btn span { display: none; }
+    .float-btn { padding: 0.85rem; border-radius: 50%; }
+    .float-icon { font-size: 1.4rem; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-buttons { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-secondary { width: 100%; max-width: 280px; justify-content: center; }
+    .hero-trust { gap: 1rem; }
+  }
+
+  /* ===== SCROLL REVEAL ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Geometric accent */
+  .geo-accent {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(201,148,10,0.08);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="om-bg">ॐ</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <div class="nav-logo-icon">🛺</div>
+      <div class="nav-logo-text">
+        Mahadev Auto Service
+        <span>Shirdi's Trusted Transport</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#hotel">Hotel Booking</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:9307062992" class="nav-call">📞 Call Now</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home" onclick="closeMenu()">🏠 Home</a>
+  <a href="#services" onclick="closeMenu()">🛺 Services</a>
+  <a href="#pricing" onclick="closeMenu()">💰 Pricing</a>
+  <a href="#hotel" onclick="closeMenu()">🏨 Hotel Booking</a>
+  <a href="#contact" onclick="closeMenu()">📞 Contact</a>
+  <a href="tel:9307062992" style="color: #FF8C3A; font-weight: 700;">📞 Call: 9307062992</a>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar" style="margin-top: 64px;">
+  ✦ Trusted by Thousands of Shirdi Visitors ✦ Serving Sai Baba Devotees Since Years ✦
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <svg class="hero-mandala" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="195" stroke="#C9940A" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="170" stroke="#C9940A" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="140" stroke="#C9940A" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="110" stroke="#C9940A" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="80" stroke="#C9940A" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="50" stroke="#C9940A" stroke-width="0.5"/>
+    <line x1="200" y1="5" x2="200" y2="395" stroke="#C9940A" stroke-width="0.5"/>
+    <line x1="5" y1="200" x2="395" y2="200" stroke="#C9940A" stroke-width="0.5"/>
+    <line x1="60" y1="60" x2="340" y2="340" stroke="#C9940A" stroke-width="0.5"/>
+    <line x1="340" y1="60" x2="60" y2="340" stroke="#C9940A" stroke-width="0.5"/>
+    <polygon points="200,20 380,310 20,310" stroke="#C9940A" stroke-width="0.5" fill="none"/>
+    <polygon points="200,380 20,90 380,90" stroke="#C9940A" stroke-width="0.5" fill="none"/>
+  </svg>
+
+  <div class="hero-badge">🙏 Om Sai Ram — Shirdi's Trusted Auto Service</div>
+  
+  <h1>Reliable Auto Rickshaw<br><span class="highlight">Service in Shirdi</span></h1>
+  
+  <p class="hero-sub">Safe, affordable and fast rides for Sai Baba devotees.<br>Your trusted companion from darshan to destination.</p>
+  
+  <div class="hero-buttons">
+    <a href="tel:9307062992" class="btn-primary">📞 Call Now: 9307062992</a>
+    <a href="https://wa.me/919307062992?text=Hello%2C%20I%20want%20to%20book%20an%20auto%20rickshaw%20in%20Shirdi" class="btn-secondary">💬 Book Your Ride</a>
+  </div>
+
+  <div class="hero-trust">
+    <div class="trust-item"><div class="dot"></div>100% Safe Rides</div>
+    <div class="trust-item"><div class="dot"></div>Best Fare Rates</div>
+    <div class="trust-item"><div class="dot"></div>24/7 Available</div>
+    <div class="trust-item"><div class="dot"></div>Local Expert Driver</div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="padding: 5rem 1.5rem; background: var(--cream);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">✦ What We Offer</span>
+      <h2 class="section-title">Our Services</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🛺</div>
+        <h3>Local Shirdi Rides</h3>
+        <p>Quick and comfortable rides anywhere within Shirdi. Perfect for devotees who need to move between temple, hotels, and local spots with ease.</p>
+        <a href="tel:9307062992" class="service-cta">Book Now →</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">🕌</div>
+        <h3>Full Darshan Tour</h3>
+        <p>Complete Shirdi darshan covering Sai Baba Samadhi Mandir, Dwarkamai, Chavadi, Lendi Baug and all sacred spots at your pace.</p>
+        <a href="tel:9307062992" class="service-cta">Book Now →</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">✈️</div>
+        <h3>Pickup & Drop Service</h3>
+        <p>Timely pickup from Shirdi Airport, Sainagar Shirdi Railway Station, or bus stand. Reliable drop to your destination with luggage assistance.</p>
+        <a href="tel:9307062992" class="service-cta">Book Now →</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">🏨</div>
+        <h3>Hotel Booking Assistance</h3>
+        <p>Need a place to stay? We help you find and book the best hotels near Sai Baba temple to suit your budget and comfort. Call for best prices.</p>
+        <a href="tel:9307062992" class="service-cta">Get Help →</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">🌙</div>
+        <h3>Night Darshan Rides</h3>
+        <p>Available for early morning Kakad Aarti and late night rides. We're here whenever the devotees need us — day or night.</p>
+        <a href="tel:9307062992" class="service-cta">Book Now →</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">🗺️</div>
+        <h3>Outstation Day Trips</h3>
+        <p>Explore nearby temples and pilgrimages from Shirdi — Shani Shingnapur, Nashik, Trimbakeshwar and more. Full day packages available.</p>
+        <a href="tel:9307062992" class="service-cta">Enquire →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container" style="position: relative; z-index: 1;">
+    <div class="section-header reveal">
+      <span class="section-label" style="color: var(--gold-light);">✦ Transparent & Fair</span>
+      <h2 class="section-title" style="color: white;">Pricing</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="reveal">
+      <div class="pricing-badge">
+        🏆 Most Affordable Fare Rates in Shirdi
+      </div>
+    </div>
+
+    <p class="pricing-note reveal">
+      Exact fare depends on distance and route. We promise the most honest and affordable rates for all Sai Baba devotees. No hidden charges — ever.
+    </p>
+
+    <div class="pricing-items reveal">
+      <div class="pricing-item">
+        <div class="label">Local Rides</div>
+        <div class="value">Call for Fare</div>
+      </div>
+      <div class="pricing-item">
+        <div class="label">Full Darshan Tour</div>
+        <div class="value">Call for Fare</div>
+      </div>
+      <div class="pricing-item">
+        <div class="label">Airport Pickup</div>
+        <div class="value">Call for Fare</div>
+      </div>
+      <div class="pricing-item">
+        <div class="label">Outstation Trips</div>
+        <div class="value">Call for Fare</div>
+      </div>
+    </div>
+
+    <div class="reveal" style="text-align: center; margin-top: 2rem;">
+      <a href="tel:9307062992" class="btn-primary" style="display: inline-flex; font-size: 1.1rem;">
+        📞 Call 9307062992 for Best Price
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOTEL BOOKING -->
+<section id="hotel">
+  <div class="container">
+    <div class="hotel-inner">
+      <div class="hotel-text reveal">
+        <div class="section-header">
+          <span class="section-label">✦ Stay Comfortable</span>
+          <h2 class="section-title">Hotel Booking Assistance</h2>
+          <div class="section-divider"></div>
+        </div>
+        <p>Planning your Shirdi yatra? Let us take care of your accommodation too. We help pilgrims find the best hotels near Sai Baba Samadhi Mandir that fit your budget.</p>
+        <ul class="hotel-features">
+          <li>Hotels near Sai Baba Temple</li>
+          <li>Budget to Premium options available</li>
+          <li>Dharamshala & guest house options</li>
+          <li>Family-friendly accommodations</li>
+          <li>Group booking assistance</li>
+          <li>Free advice, no booking fee</li>
+        </ul>
+        <a href="tel:9307062992" class="btn-primary">📞 Call for Hotel Booking</a>
+      </div>
+      <div class="hotel-visual reveal">
+        <span class="big-emoji">🏨</span>
+        <h3>Stay Near the Temple</h3>
+        <p>We know Shirdi like our home. Let us find you the perfect stay for your sacred journey.</p>
+        <a href="tel:9307062992" class="btn-primary" style="justify-content: center; width: 100%;">Call: 9307062992</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="padding: 5rem 1.5rem; background: var(--cream);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">✦ What Devotees Say</span>
+      <h2 class="section-title">Trusted by Shirdi Visitors</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Excellent service! Mahadev ji picked us up from the station and gave us a complete darshan tour. Very honest and knowledgeable driver. He knew every temple spot in Shirdi. Highly recommended for all pilgrims.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">R</div>
+          <div class="author-info">
+            <div class="author-name">Ramesh Sharma</div>
+            <div class="author-place">Delhi, India</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">We were a family of 6 coming for Sai darshan. Baburao ji arranged everything perfectly — pickup, darshan tour, hotel. Very affordable rates and extremely polite behavior. Will definitely book again on our next visit!</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">S</div>
+          <div class="author-info">
+            <div class="author-name">Sunita Patel</div>
+            <div class="author-place">Ahmedabad, Gujarat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Best auto service in Shirdi! He waited patiently during long darshan queue, helped with luggage, and even suggested a good hotel. The fare was very reasonable. Sai Baba bless this driver for his honest service!</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">P</div>
+          <div class="author-info">
+            <div class="author-name">Priya Menon</div>
+            <div class="author-place">Bangalore, Karnataka</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label" style="color: var(--gold-light);">✦ Get in Touch</span>
+      <h2 class="section-title" style="color: white;">Contact Us</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-card">
+          <div class="contact-card-icon">📞</div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Call / WhatsApp</div>
+            <a href="tel:9307062992" class="contact-card-value">+91 93070 62992</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">💬</div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">WhatsApp Booking</div>
+            <a href="https://wa.me/919307062992?text=Hello%2C%20I%20want%20to%20book%20a%20ride%20in%20Shirdi" class="contact-card-value">Message on WhatsApp</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📍</div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Location</div>
+            <span class="contact-card-value">Shirdi, Maharashtra, India</span>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">⏰</div>
+          <div class="contact-card-text">
+            <div class="contact-card-label">Availability</div>
+            <span class="contact-card-value">24 Hours / 7 Days a Week</span>
+          </div>
+        </div>
+        <div style="padding: 1.2rem; background: rgba(255,107,0,0.08); border: 1px solid rgba(255,107,0,0.25); border-radius: 12px; margin-top: 0.5rem;">
+          <p style="color: var(--gold-light); font-size: 0.9rem; font-style: italic; line-height: 1.6; text-align: center;">
+            🙏 <strong>"Sabka Malik Ek"</strong><br>
+            <span style="color: rgba(255,255,255,0.5); font-size: 0.8rem;">We serve every pilgrim with devotion and honesty</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-form reveal">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Enter your full name">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+91 XXXXX XXXXX">
+        </div>
+        <div class="form-group">
+          <label>Service Required</label>
+          <select>
+            <option>Local Shirdi Ride</option>
+            <option>Full Darshan Tour</option>
+            <option>Airport / Station Pickup</option>
+            <option>Hotel Booking Assistance</option>
+            <option>Outstation Trip</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Travel Date & Details</label>
+          <textarea placeholder="Tell us your travel date, group size, and any special requirements..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="submitForm()">🙏 Send Booking Request</button>
+        <p style="color: rgba(255,255,255,0.4); font-size: 0.78rem; text-align: center; margin-top: 0.5rem;">
+          Or call directly: <a href="tel:9307062992" style="color: var(--gold-light);">9307062992</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="om-footer">ॐ</span>
+  <div class="footer-logo">Mahadev Baburao Karad Auto Service</div>
+  <p class="footer-tagline">Safe & Affordable Auto Rickshaw in Shirdi — Serving Sai Baba Devotees</p>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#hotel">Hotel Booking</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:9307062992">📞 9307062992</a>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Mahadev Baburao Karad Auto Service, Shirdi, Maharashtra, India</p>
+    <p style="margin-top: 0.4rem;">Auto Rickshaw in Shirdi | Shirdi Local Transport | Sai Baba Darshan Auto Service</p>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="floating-btns">
+  <a href="https://wa.me/919307062992?text=Hello%2C%20I%20want%20to%20book%20a%20ride%20in%20Shirdi" class="float-btn float-whatsapp" target="_blank">
+    <span class="float-icon">💬</span>
+    <span>WhatsApp</span>
+  </a>
+  <a href="tel:9307062992" class="float-btn float-call">
+    <span class="float-icon">📞</span>
+    <span>Call Now</span>
+  </a>
+</div>
+
+<script>
+  // Mobile nav toggle
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Form submit
+  function submitForm() {
+    const name = document.querySelector('input[type=text]').value;
+    const phone = document.querySelector('input[type=tel]').value;
+    if (!name || !phone) {
+      alert('Please enter your name and phone number.');
+      return;
+    }
+    const service = document.querySelector('select').value;
+    const details = document.querySelector('textarea').value;
+    const msg = encodeURIComponent(`Hello! I want to book your auto service.\n\nName: ${name}\nPhone: ${phone}\nService: ${service}\nDetails: ${details}`);
+    window.open(`https://wa.me/919307062992?text=${msg}`, '_blank');
+  }
+
+  // Close mobile nav on outside click
+  document.addEventListener('click', (e) => {
+    const nav = document.getElementById('mobileNav');
+    const hamburger = document.querySelector('.hamburger');
+    if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+      nav.classList.remove('open');
+    }
+  });
+</script>
+</body>
+</html>
