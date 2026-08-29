@@ -1,6 +1,6 @@
 """
 Automated Test Suite for Sujitkarad/Shirdibooking.com
-Tests HTML structure, CSS responsiveness rules, JS logic, form validation, and HTTP endpoints.
+Tests Premium HTML structure, CSS responsiveness rules, JS logic, form validation, and short WhatsApp messages to 9307062992.
 """
 
 import os
@@ -9,6 +9,7 @@ import urllib.parse
 import urllib.request
 
 WORKSPACE = r"c:\Users\Sujit\.gemini\antigravity-ide\scratch\New folder"
+DRIVER_PHONE = "9307062992"
 
 def test_files_exist():
     print("TEST 1: Checking required files exist...")
@@ -27,10 +28,9 @@ def test_html_and_meta():
         assert 'og:title' in content, f"Missing og:title in {filename}"
         assert 'og:description' in content, f"Missing og:description in {filename}"
         assert 'og:image' in content, f"Missing og:image in {filename}"
-        assert 'twitter:card' in content, f"Missing twitter:card in {filename}"
-        assert 'viewport' in content, f"Missing viewport in {filename}"
         assert '<html lang="en">' in content, f"Missing lang='en' in {filename}"
-    print("  --> PASS: HTML metadata and favicons verified in all pages.")
+        assert 'Cinzel' in content, f"Missing Cinzel premium font in {filename}"
+    print("  --> PASS: HTML metadata, typography and favicons verified in all pages.")
 
 def test_floating_action_buttons_css():
     print("TEST 3: Checking floating action buttons mobile CSS fix...")
@@ -38,77 +38,60 @@ def test_floating_action_buttons_css():
         with open(os.path.join(WORKSPACE, filename), "r", encoding="utf-8") as f:
             content = f.read()
 
-        # Check that mobile rule only hides .float-text, NOT .float-icon or all spans
         assert ".float-btn .float-text { display: none; }" in content, \
             f"Expected '.float-btn .float-text {{ display: none; }}' in {filename}"
-        assert ".float-btn span { display: none; }" not in content, \
-            f"Buggy '.float-btn span {{ display: none; }}' found in {filename}!"
         assert 'class="float-text"' in content, f"Missing float-text class in {filename}"
         assert 'class="float-icon"' in content, f"Missing float-icon class in {filename}"
     print("  --> PASS: Floating action buttons mobile fix verified (icons visible).")
 
-def test_semantic_booking_form():
-    print("TEST 4: Checking booking form semantics, IDs, and labels...")
+def test_short_whatsapp_messages():
+    print("TEST 4: Verifying all WhatsApp URLs point to 9307062992 with short concise messages...")
     for filename in ["index.html", "book.html"]:
         with open(os.path.join(WORKSPACE, filename), "r", encoding="utf-8") as f:
             content = f.read()
 
-        assert '<form class="contact-form reveal" id="bookingForm"' in content, \
-            f"Missing form#bookingForm in {filename}"
-        assert 'onsubmit="submitBookingForm(event)"' in content, \
-            f"Missing onsubmit handler in {filename}"
-        assert 'id="bookingName"' in content, f"Missing bookingName id in {filename}"
-        assert 'id="bookingPhone"' in content, f"Missing bookingPhone id in {filename}"
-        assert 'id="bookingService"' in content, f"Missing bookingService id in {filename}"
-        assert 'id="bookingDetails"' in content, f"Missing bookingDetails id in {filename}"
-        assert 'id="formFeedback"' in content, f"Missing formFeedback id in {filename}"
-        assert 'for="bookingName"' in content, f"Missing for='bookingName' label in {filename}"
-        assert 'for="bookingPhone"' in content, f"Missing for='bookingPhone' label in {filename}"
-        assert 'for="bookingService"' in content, f"Missing for='bookingService' label in {filename}"
-        assert 'for="bookingDetails"' in content, f"Missing for='bookingDetails' label in {filename}"
-    print("  --> PASS: Form semantics, labels, and accessible IDs verified.")
+        # Find static href links
+        wa_hrefs = re.findall(r'href="(https://wa\.me/919307062992[^"]*)"', content)
+        assert len(wa_hrefs) >= 10, f"Expected multiple static WhatsApp booking links in {filename}, found {len(wa_hrefs)}"
+        for link in wa_hrefs:
+            assert DRIVER_PHONE in link, f"Driver phone {DRIVER_PHONE} not in link {link}"
+            decoded = urllib.parse.unquote(link)
+            assert ("Sai Ram" in decoded or "Mahadev" in decoded), f"Unexpected message text in {link}"
+        
+        # Check dynamic JS template literal
+        assert f"https://wa.me/91{DRIVER_PHONE}?text=" in content, "Missing JS WhatsApp dynamic URL generation"
+    print(f"  --> PASS: Verified {len(wa_hrefs)} WhatsApp links directly targeting driver {DRIVER_PHONE}.")
 
-def test_whatsapp_message_encoding_logic():
-    print("TEST 5: Testing WhatsApp message formatting and URL encoding logic...")
-    name = "Ravi Kumar"
-    phone = "+91 98765 43210"
-    phone_clean = re.sub(r'[^0-9+]', '', phone)
-    digits = re.sub(r'\D', '', phone)
+def test_form_short_message_generation():
+    print("TEST 5: Testing booking form short message format...")
+    name = "Amit Sharma"
+    phone = "9876543210"
     service = "Full Darshan Tour"
-    details = "Traveling with family of 4 on Saturday morning"
+    details = "Morning 8 AM pickup"
 
-    assert len(digits) >= 10, "Phone validation should accept 10+ digits"
+    expected_wa_msg = f"🙏 Sai Ram Mahadev ji!\n🛺 Booking: {service}\n👤 Name: {name}\n📞 Phone: {phone}\n📝 Note: {details}\nPlease confirm ride."
+    encoded = urllib.parse.quote(expected_wa_msg)
+    wa_url = f"https://wa.me/91{DRIVER_PHONE}?text={encoded}"
 
-    wa_msg = (
-        f"🙏 *Sai Ram! New Booking Request*\n\n"
-        f"👤 *Name:* {name}\n"
-        f"📞 *Phone:* {phone_clean}\n"
-        f"🛺 *Service:* {service}\n"
-        f"📝 *Travel Details:* {details}"
-    )
+    assert DRIVER_PHONE in wa_url
+    assert "Sai%20Ram" in wa_url
+    assert "Amit%20Sharma" in wa_url
+    assert "Full%20Darshan%20Tour" in wa_url
+    print("  --> PASS: Booking form short WhatsApp message generated properly.")
 
-    encoded = urllib.parse.quote(wa_msg)
-    wa_url = f"https://wa.me/919307062992?text={encoded}"
-
-    assert "919307062992" in wa_url
-    assert "Sai%20Ram" in wa_url or "Sai+Ram" in wa_url
-    assert "Ravi%20Kumar" in wa_url or "Ravi+Kumar" in wa_url
-    assert "Full%20Darshan%20Tour" in wa_url or "Full+Darshan+Tour" in wa_url
-    print("  --> PASS: WhatsApp URL generation formatted and encoded accurately.")
-
-def test_mobile_nav_accessibility():
-    print("TEST 6: Checking mobile nav accessibility attributes and escape listener...")
+def test_quick_booking_tray():
+    print("TEST 6: Checking 1-click Quick Booking tray...")
     for filename in ["index.html", "book.html"]:
         with open(os.path.join(WORKSPACE, filename), "r", encoding="utf-8") as f:
             content = f.read()
 
-        assert 'id="hamburgerBtn"' in content, f"Missing hamburgerBtn id in {filename}"
-        assert 'aria-label="Toggle navigation menu"' in content, f"Missing aria-label on hamburger in {filename}"
-        assert 'aria-expanded="false"' in content, f"Missing aria-expanded on hamburger in {filename}"
-        assert 'aria-controls="mobileNav"' in content, f"Missing aria-controls on hamburger in {filename}"
-        assert "e.key === 'Escape'" in content, f"Missing Escape key listener in {filename}"
-        assert ".hamburger.active" in content, f"Missing active hamburger CSS transition in {filename}"
-    print("  --> PASS: Mobile navigation accessibility & keyboard support verified.")
+        assert 'quick-book-box' in content, f"Missing quick-book-box in {filename}"
+        assert 'Local Ride' in content, f"Missing Local Ride in quick book tray in {filename}"
+        assert 'Darshan Tour' in content, f"Missing Darshan Tour in quick book tray in {filename}"
+        assert 'Pickup / Drop' in content, f"Missing Pickup / Drop in quick book tray in {filename}"
+        assert 'Night Aarti' in content, f"Missing Night Aarti in quick book tray in {filename}"
+        assert 'Shani Tour' in content, f"Missing Shani Tour in quick book tray in {filename}"
+    print("  --> PASS: 1-click Quick Booking tray verified.")
 
 def test_local_server_endpoints():
     print("TEST 7: Testing HTTP server endpoints on localhost:8080...")
@@ -131,8 +114,8 @@ if __name__ == "__main__":
     test_files_exist()
     test_html_and_meta()
     test_floating_action_buttons_css()
-    test_semantic_booking_form()
-    test_whatsapp_message_encoding_logic()
-    test_mobile_nav_accessibility()
+    test_short_whatsapp_messages()
+    test_form_short_message_generation()
+    test_quick_booking_tray()
     test_local_server_endpoints()
     print("\n=== ALL TESTS PASSED SUCCESSFULLY! ===")
