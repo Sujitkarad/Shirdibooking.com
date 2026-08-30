@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sujitkarad.github.io/Shirdibooking.com/sitemap.xml

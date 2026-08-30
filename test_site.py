@@ -15,7 +15,10 @@ def test_files_exist():
     print("TEST 1: Checking required files exist...")
     assert os.path.exists(os.path.join(WORKSPACE, "index.html")), "index.html must exist"
     assert os.path.exists(os.path.join(WORKSPACE, "book.html")), "book.html must exist"
-    print("  --> PASS: index.html and book.html exist.")
+    assert os.path.exists(os.path.join(WORKSPACE, "qr.html")), "qr.html must exist"
+    assert os.path.exists(os.path.join(WORKSPACE, "sitemap.xml")), "sitemap.xml must exist"
+    assert os.path.exists(os.path.join(WORKSPACE, "robots.txt")), "robots.txt must exist"
+    print("  --> PASS: index.html, book.html, qr.html, sitemap.xml and robots.txt exist.")
 
 def test_html_and_meta():
     print("TEST 2: Checking HTML metadata, favicon, SEO schema, and OpenGraph tags...")
@@ -29,13 +32,14 @@ def test_html_and_meta():
         assert 'og:description' in content, f"Missing og:description in {filename}"
         assert 'og:image' in content, f"Missing og:image in {filename}"
         assert 'twitter:card' in content, f"Missing twitter:card in {filename}"
+        assert 'googlebot' in content, f"Missing googlebot indexing meta in {filename}"
         assert 'application/ld+json' in content, f"Missing Schema.org JSON-LD in {filename}"
         assert 'TaxiService' in content, f"Missing TaxiService in Schema JSON-LD in {filename}"
         assert '<html lang="en">' in content, f"Missing lang='en' in {filename}"
         assert 'Cinzel' in content, f"Missing Cinzel premium font in {filename}"
         assert 'skip-link' in content, f"Missing skip-link accessibility feature in {filename}"
         assert '<main id="main-content">' in content, f"Missing main landmark in {filename}"
-    print("  --> PASS: HTML metadata, typography, SEO JSON-LD schema and favicons verified in all pages.")
+    print("  --> PASS: HTML metadata, typography, SEO JSON-LD schema, robots & Googlebot meta verified in all pages.")
 
 def test_floating_action_buttons_css():
     print("TEST 3: Checking floating action buttons mobile CSS fix...")
