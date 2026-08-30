@@ -7,12 +7,55 @@
 <meta name="description" content="Premium, reliable, and affordable auto rickshaw service in Shirdi for Sai Baba devotees. Local rides, full darshan tours, airport & railway pickup, hotel assistance. Book instantly on WhatsApp +91 9307062992.">
 <meta name="keywords" content="auto rickshaw in Shirdi, Shirdi local transport, Sai Baba darshan auto service, Shirdi auto booking, Sai Baba temple transport, Shirdi taxi, Shirdi tour packages, Shani Shingnapur tour">
 <meta name="theme-color" content="#0B0401">
+<link rel="canonical" href="https://shirdibooking.com/book.html">
 
 <!-- Open Graph / WhatsApp Meta Tags -->
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://shirdibooking.com/book.html">
+<meta property="og:site_name" content="Mahadev Auto Service Shirdi">
 <meta property="og:title" content="Mahadev Baburao Karad Auto Service – Shirdi Auto & Darshan Tours">
 <meta property="og:description" content="Safe, honest & reliable auto rickshaw service in Shirdi for Sai Baba devotees. Book instantly on WhatsApp 9307062992.">
 <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FF6B00'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' font-size='60'>🛺</text></svg>">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mahadev Baburao Karad Auto Service – Shirdi Auto & Darshan Tours">
+<meta name="twitter:description" content="Safe, honest & reliable auto rickshaw service in Shirdi for Sai Baba devotees. Book instantly on WhatsApp 9307062992.">
+<meta name="twitter:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FF6B00'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' font-size='60'>🛺</text></svg>">
+
+<!-- Schema.org JSON-LD Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TaxiService",
+  "name": "Mahadev Baburao Karad Auto Service",
+  "description": "Safe, honest & reliable auto rickshaw service in Shirdi for Sai Baba devotees. Local rides, full darshan tours, airport & railway station transfers.",
+  "telephone": "+919307062992",
+  "priceRange": "₹",
+  "image": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FF6B00'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' font-size='60'>🛺</text></svg>",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Shirdi",
+    "addressRegion": "Maharashtra",
+    "addressCountry": "IN"
+  },
+  "areaServed": [
+    "Shirdi",
+    "Sainagar Shirdi Railway Station",
+    "Shirdi Airport SAG",
+    "Kopargaon",
+    "Shani Shingnapur",
+    "Nashik",
+    "Trimbakeshwar"
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
+}
+</script>
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FF6B00'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' font-size='60'>🛺</text></svg>">
@@ -58,6 +101,23 @@
     overflow-x: hidden;
     line-height: 1.6;
   }
+
+  /* ACCESSIBILITY SKIP LINK */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1.5rem;
+    background: var(--gold);
+    color: var(--text-dark);
+    padding: 0.6rem 1.2rem;
+    font-weight: 700;
+    border-radius: 8px;
+    z-index: 9999;
+    transition: top 0.2s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  }
+  .skip-link:focus { top: 1rem; }
 
   /* BACKGROUND OM WATERMARK */
   .om-bg {
@@ -149,12 +209,27 @@
     font-size: 0.9rem;
     letter-spacing: 0.04em;
     font-weight: 500;
+    position: relative;
+    padding: 0.4rem 0;
     transition: color 0.2s ease;
   }
 
   .nav-links a:hover,
-  .nav-links a:focus-visible { 
+  .nav-links a:focus-visible,
+  .nav-links a.active { 
     color: var(--gold-light); 
+  }
+
+  .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--saffron), var(--gold-light));
+    border-radius: 2px;
+    box-shadow: 0 0 8px var(--gold-glow);
   }
 
   .nav-cta-group {
@@ -192,6 +267,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
+    text-decoration: none;
     box-shadow: 0 2px 10px var(--saffron-glow);
     transition: transform 0.2s, box-shadow 0.2s;
   }
@@ -281,6 +357,51 @@
     text-transform: uppercase;
     margin-top: var(--nav-height);
     box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  }
+
+  /* ===== SECTION STYLES & SCROLL MARGIN ===== */
+  section { 
+    position: relative; 
+    z-index: 1; 
+    scroll-margin-top: calc(var(--nav-height) + 20px);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    color: var(--saffron-light);
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+    font-weight: 700;
+    color: #FFF;
+    line-height: 1.2;
+  }
+
+  .section-divider {
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--saffron), var(--gold-light));
+    margin: 1.2rem auto 0;
+    border-radius: 3px;
+    box-shadow: 0 0 10px var(--saffron-glow);
+  }
+
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
 
   /* ===== HERO ===== */
@@ -389,7 +510,7 @@
 
   .quick-rides-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 115px), 1fr));
     gap: 0.8rem;
   }
 
@@ -413,7 +534,8 @@
 
   .quick-ride-btn .ride-icon { font-size: 1.3rem; }
 
-  .quick-ride-btn:hover {
+  .quick-ride-btn:hover,
+  .quick-ride-btn:focus-visible {
     background: rgba(255, 107, 0, 0.18);
     border-color: var(--gold);
     transform: translateY(-3px);
@@ -448,7 +570,8 @@
     border: none;
   }
 
-  .btn-primary-wa:hover {
+  .btn-primary-wa:hover,
+  .btn-primary-wa:focus-visible {
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(37, 211, 102, 0.55);
   }
@@ -470,7 +593,8 @@
     backdrop-filter: blur(8px);
   }
 
-  .btn-secondary:hover {
+  .btn-secondary:hover,
+  .btn-secondary:focus-visible {
     background: var(--gold);
     color: var(--text-dark);
     transform: translateY(-2px);
@@ -501,47 +625,6 @@
     box-shadow: 0 0 8px var(--gold);
   }
 
-  /* ===== SECTION STYLES ===== */
-  section { position: relative; z-index: 1; }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: 3.5rem;
-  }
-
-  .section-label {
-    display: inline-block;
-    color: var(--saffron-light);
-    font-size: 0.78rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-  }
-
-  .section-title {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
-    font-weight: 700;
-    color: #FFF;
-    line-height: 1.2;
-  }
-
-  .section-divider {
-    width: 70px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--saffron), var(--gold-light));
-    margin: 1.2rem auto 0;
-    border-radius: 3px;
-    box-shadow: 0 0 10px var(--saffron-glow);
-  }
-
-  .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
   /* ===== SERVICES SECTION ===== */
   #services {
     padding: 6rem 1.5rem;
@@ -550,7 +633,7 @@
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
     gap: 2rem;
   }
 
@@ -639,7 +722,8 @@
     box-shadow: 0 3px 12px rgba(37, 211, 102, 0.3);
   }
 
-  .btn-service-wa:hover {
+  .btn-service-wa:hover,
+  .btn-service-wa:focus-visible {
     transform: translateY(-1px);
     box-shadow: 0 5px 18px rgba(37, 211, 102, 0.45);
   }
@@ -654,7 +738,8 @@
     gap: 0.3rem;
   }
 
-  .btn-service-call:hover { color: #FFF; }
+  .btn-service-call:hover,
+  .btn-service-call:focus-visible { color: #FFF; }
 
   /* ===== PRICING SECTION ===== */
   #pricing {
@@ -691,7 +776,7 @@
 
   .pricing-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
     gap: 1.2rem;
     max-width: 950px;
     margin: 0 auto 2.5rem;
@@ -742,7 +827,8 @@
     transition: all 0.2s;
   }
 
-  .pricing-item .btn-fare-wa:hover {
+  .pricing-item .btn-fare-wa:hover,
+  .pricing-item .btn-fare-wa:focus-visible {
     background: #25D366;
     color: white;
   }
@@ -829,7 +915,7 @@
 
   .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
     gap: 2rem;
   }
 
@@ -966,7 +1052,8 @@
     display: inline-block;
   }
 
-  .contact-card-value:hover { color: var(--gold-light); }
+  .contact-card-value:hover,
+  .contact-card-value:focus-visible { color: var(--gold-light); }
 
   /* Booking Form */
   .contact-form {
@@ -1017,6 +1104,12 @@
     background: rgba(255,255,255,0.09);
   }
 
+  .form-group input.field-error,
+  .form-group select.field-error {
+    border-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.08);
+  }
+
   .form-group select option { background: #1A0A02; color: white; }
   .form-group textarea { height: 95px; resize: vertical; }
 
@@ -1062,7 +1155,8 @@
     gap: 0.6rem;
   }
 
-  .btn-submit-wa:hover {
+  .btn-submit-wa:hover,
+  .btn-submit-wa:focus-visible {
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(37, 211, 102, 0.55);
   }
@@ -1104,7 +1198,8 @@
     transition: color 0.2s;
   }
 
-  .footer-links a:hover { color: var(--gold-light); }
+  .footer-links a:hover,
+  .footer-links a:focus-visible { color: var(--gold-light); }
 
   .footer-bottom {
     color: rgba(255,255,255,0.35);
@@ -1140,7 +1235,8 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .float-btn:hover {
+  .float-btn:hover,
+  .float-btn:focus-visible {
     transform: translateY(-3px) scale(1.03);
   }
 
@@ -1227,10 +1323,11 @@
 </head>
 <body>
 
+<a href="#home" class="skip-link">Skip to main content</a>
 <div class="om-bg" aria-hidden="true">ॐ</div>
 
 <!-- NAVIGATION -->
-<nav>
+<nav role="navigation" aria-label="Main Navigation">
   <div class="nav-inner">
     <a href="#home" class="nav-logo" aria-label="Mahadev Auto Service Home">
       <div class="nav-logo-icon" aria-hidden="true">🛺</div>
@@ -1239,8 +1336,8 @@
         <span>Shirdi Sai Darshan Rides</span>
       </div>
     </a>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
+    <ul class="nav-links" id="desktopNavLinks">
+      <li><a href="#home" class="active">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#hotel">Hotel Booking</a></li>
@@ -1272,367 +1369,369 @@
   ✦ Trusted Auto Service in Shirdi ✦ 24/7 Available for Sai Baba Devotees ✦
 </div>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <svg class="hero-mandala" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <circle cx="200" cy="200" r="195" stroke="#D4AF37" stroke-width="0.6"/>
-    <circle cx="200" cy="200" r="170" stroke="#D4AF37" stroke-width="0.6"/>
-    <circle cx="200" cy="200" r="140" stroke="#D4AF37" stroke-width="0.6"/>
-    <circle cx="200" cy="200" r="110" stroke="#D4AF37" stroke-width="0.6"/>
-    <circle cx="200" cy="200" r="80" stroke="#D4AF37" stroke-width="0.6"/>
-    <line x1="200" y1="5" x2="200" y2="395" stroke="#D4AF37" stroke-width="0.6"/>
-    <line x1="5" y1="200" x2="395" y2="200" stroke="#D4AF37" stroke-width="0.6"/>
-    <line x1="60" y1="60" x2="340" y2="340" stroke="#D4AF37" stroke-width="0.6"/>
-    <line x1="340" y1="60" x2="60" y2="340" stroke="#D4AF37" stroke-width="0.6"/>
-    <polygon points="200,20 380,310 20,310" stroke="#D4AF37" stroke-width="0.6" fill="none"/>
-    <polygon points="200,380 20,90 380,90" stroke="#D4AF37" stroke-width="0.6" fill="none"/>
-  </svg>
+<main id="main-content">
+  <!-- HERO -->
+  <section class="hero" id="home" aria-label="Welcome section">
+    <svg class="hero-mandala" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="200" cy="200" r="195" stroke="#D4AF37" stroke-width="0.6"/>
+      <circle cx="200" cy="200" r="170" stroke="#D4AF37" stroke-width="0.6"/>
+      <circle cx="200" cy="200" r="140" stroke="#D4AF37" stroke-width="0.6"/>
+      <circle cx="200" cy="200" r="110" stroke="#D4AF37" stroke-width="0.6"/>
+      <circle cx="200" cy="200" r="80" stroke="#D4AF37" stroke-width="0.6"/>
+      <line x1="200" y1="5" x2="200" y2="395" stroke="#D4AF37" stroke-width="0.6"/>
+      <line x1="5" y1="200" x2="395" y2="200" stroke="#D4AF37" stroke-width="0.6"/>
+      <line x1="60" y1="60" x2="340" y2="340" stroke="#D4AF37" stroke-width="0.6"/>
+      <line x1="340" y1="60" x2="60" y2="340" stroke="#D4AF37" stroke-width="0.6"/>
+      <polygon points="200,20 380,310 20,310" stroke="#D4AF37" stroke-width="0.6" fill="none"/>
+      <polygon points="200,380 20,90 380,90" stroke="#D4AF37" stroke-width="0.6" fill="none"/>
+    </svg>
 
-  <div class="hero-badge">🙏 Om Sai Ram — Shirdi's Trusted Auto Service</div>
-  
-  <h1>Reliable Auto Rickshaw<br><span class="highlight">Service in Shirdi</span></h1>
-  
-  <p class="hero-sub">Safe, affordable, and punctual rides for Sai Baba devotees.<br>Local rides, complete temple darshan tours, and airport/station transfers.</p>
+    <div class="hero-badge">🙏 Om Sai Ram — Shirdi's Trusted Auto Service</div>
+    
+    <h1>Reliable Auto Rickshaw<br><span class="highlight">Service in Shirdi</span></h1>
+    
+    <p class="hero-sub">Safe, affordable, and punctual rides for Sai Baba devotees.<br>Local rides, complete temple darshan tours, and airport/station transfers.</p>
 
-  <!-- 1-CLICK INSTANT RIDE SELECTOR -->
-  <div class="quick-book-box">
-    <div class="quick-book-title">⚡ 1-Tap Instant WhatsApp Booking (9307062992)</div>
-    <div class="quick-rides-grid">
-      <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Local%20Shirdi%20Auto%20Ride.%20Please%20confirm%20availability." target="_blank" rel="noopener noreferrer" class="quick-ride-btn">
-        <span class="ride-icon">🛺</span>
-        <span>Local Ride</span>
-      </a>
-      <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Want%20to%20book%20Full%20Shirdi%20Darshan%20Tour.%20Please%20share%20fare%20%26%20details." target="_blank" rel="noopener noreferrer" class="quick-ride-btn">
-        <span class="ride-icon">🕌</span>
-        <span>Darshan Tour</span>
-      </a>
-      <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Station%20%2F%20Airport%20Pickup%20in%20Shirdi.%20Please%20confirm." target="_blank" rel="noopener noreferrer" class="quick-ride-btn">
-        <span class="ride-icon">✈️</span>
-        <span>Pickup / Drop</span>
-      </a>
-      <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Hotel%20Booking%20Assistance%20near%20Sai%20Baba%20Temple." target="_blank" rel="noopener noreferrer" class="quick-ride-btn">
-        <span class="ride-icon">🏨</span>
-        <span>Hotel Stay</span>
-      </a>
-      <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Night%20Darshan%20%2F%20Kakad%20Aarti%20Auto%20Ride." target="_blank" rel="noopener noreferrer" class="quick-ride-btn">
-        <span class="ride-icon">🌙</span>
-        <span>Night Aarti</span>
-      </a>
-      <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Inquiring%20about%20Shani%20Shingnapur%20%2F%20Outstation%20Trip." target="_blank" rel="noopener noreferrer" class="quick-ride-btn">
-        <span class="ride-icon">🗺️</span>
-        <span>Shani Tour</span>
-      </a>
-    </div>
-  </div>
-  
-  <div class="hero-buttons">
-    <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20I%20want%20to%20book%20an%20auto%20ride%20in%20Shirdi.%20Please%20confirm%20availability." target="_blank" rel="noopener noreferrer" class="btn-primary-wa">
-      <span>💬 Book Your Ride on WhatsApp</span>
-    </a>
-    <a href="tel:9307062992" class="btn-secondary">
-      <span>📞 Call Now: 9307062992</span>
-    </a>
-  </div>
-
-  <div class="hero-trust">
-    <div class="trust-item"><div class="dot"></div>100% Safe Rides</div>
-    <div class="trust-item"><div class="dot"></div>Honest Meter / Fixed Fares</div>
-    <div class="trust-item"><div class="dot"></div>24/7 Available</div>
-    <div class="trust-item"><div class="dot"></div>Devoted Local Driver</div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">✦ Devotee Services</span>
-      <h2 class="section-title">Our Ride & Tour Services</h2>
-      <div class="section-divider"></div>
-    </div>
-
-    <div class="services-grid">
-      <!-- 1. Local Rides -->
-      <div class="service-card reveal">
-        <div class="service-icon-wrap">🛺</div>
-        <h3>Local Shirdi Rides</h3>
-        <p>Swift, hassle-free auto rides anywhere in Shirdi. Ideal for quick trips between hotels, markets, Sai Ashram, and temple gates.</p>
-        <div class="service-actions">
-          <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Local%20Shirdi%20Auto%20Ride.%20Please%20confirm%20availability." target="_blank" rel="noopener noreferrer" class="btn-service-wa">💬 Book on WhatsApp</a>
-          <a href="tel:9307062992" class="btn-service-call">📞 Call</a>
-        </div>
-      </div>
-
-      <!-- 2. Full Darshan -->
-      <div class="service-card reveal">
-        <div class="service-icon-wrap">🕌</div>
-        <h3>Full Darshan Tour</h3>
-        <p>Comprehensive holy tour covering Samadhi Mandir, Dwarkamai, Chavadi, Gurusthan, Lendi Baug, Khandoba Temple and all sacred spots at your own pace.</p>
-        <div class="service-actions">
-          <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Want%20to%20book%20Full%20Shirdi%20Darshan%20Tour.%20Please%20share%20fare%20%26%20details." target="_blank" rel="noopener noreferrer" class="btn-service-wa">💬 Book on WhatsApp</a>
-          <a href="tel:9307062992" class="btn-service-call">📞 Call</a>
-        </div>
-      </div>
-
-      <!-- 3. Airport / Station Pickup -->
-      <div class="service-card reveal">
-        <div class="service-icon-wrap">✈️</div>
-        <h3>Airport & Station Pickup</h3>
-        <p>On-time pickup & drop from Shirdi Airport (SAG), Sainagar Shirdi Railway Station, and Kopargaon. Safe luggage handling and family comfort guaranteed.</p>
-        <div class="service-actions">
-          <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Station%20%2F%20Airport%20Pickup%20in%20Shirdi.%20Please%20confirm." target="_blank" rel="noopener noreferrer" class="btn-service-wa">💬 Book on WhatsApp</a>
-          <a href="tel:9307062992" class="btn-service-call">📞 Call</a>
-        </div>
-      </div>
-
-      <!-- 4. Hotel Booking -->
-      <div class="service-card reveal">
-        <div class="service-icon-wrap">🏨</div>
-        <h3>Hotel Booking Assistance</h3>
-        <p>Free local guidance to find clean, trusted, and budget-friendly hotels, guest houses, and bhakt niwas walking distance from the Mandir.</p>
-        <div class="service-actions">
-          <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Hotel%20Booking%20Assistance%20near%20Sai%20Baba%20Temple." target="_blank" rel="noopener noreferrer" class="btn-service-wa">💬 Book on WhatsApp</a>
-          <a href="tel:9307062992" class="btn-service-call">📞 Call</a>
-        </div>
-      </div>
-
-      <!-- 5. Night Aarti -->
-      <div class="service-card reveal">
-        <div class="service-icon-wrap">🌙</div>
-        <h3>Night & Kakad Aarti Rides</h3>
-        <p>Early morning Kakad Aarti (4:00 AM) and late night Shej Aarti rides. Punctual doorstep pickup so you never miss sacred temple aartis.</p>
-        <div class="service-actions">
-          <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Night%20Darshan%20%2F%20Kakad%20Aarti%20Auto%20Ride." target="_blank" rel="noopener noreferrer" class="btn-service-wa">💬 Book on WhatsApp</a>
-          <a href="tel:9307062992" class="btn-service-call">📞 Call</a>
-        </div>
-      </div>
-
-      <!-- 6. Outstation -->
-      <div class="service-card reveal">
-        <div class="service-icon-wrap">🗺️</div>
-        <h3>Shani Shingnapur & Trips</h3>
-        <p>Full-day and half-day pilgrimage excursions from Shirdi to Shani Shingnapur, Trimbakeshwar Jyotirlinga, Muktidham, and Nashik temples.</p>
-        <div class="service-actions">
-          <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Inquiring%20about%20Shani%20Shingnapur%20%2F%20Outstation%20Trip." target="_blank" rel="noopener noreferrer" class="btn-service-wa">💬 Book on WhatsApp</a>
-          <a href="tel:9307062992" class="btn-service-call">📞 Call</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">✦ Honest & Transparent</span>
-      <h2 class="section-title">Affordable Fare Rates</h2>
-      <div class="section-divider"></div>
-    </div>
-
-    <div class="reveal">
-      <div class="pricing-badge">
-        🏆 Most Honest & Fair Fare Rates in Shirdi
-      </div>
-    </div>
-
-    <p class="pricing-note reveal">
-      No hidden charges, no tourist surge pricing. We treat every passenger as Sai Baba's devotee with complete honesty and transparent fares.
-    </p>
-
-    <div class="pricing-items reveal">
-      <div class="pricing-item">
-        <div class="label">Local Shirdi Rides</div>
-        <div class="value">Best Rates Guaranteed</div>
-        <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20What%20is%20the%20fare%20for%20Local%20Shirdi%20Rides%3F" target="_blank" rel="noopener noreferrer" class="btn-fare-wa">💬 Ask Fare on WhatsApp</a>
-      </div>
-      <div class="pricing-item">
-        <div class="label">Full Darshan Package</div>
-        <div class="value">Affordable Custom Tour</div>
-        <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20What%20is%20the%20fare%20for%20Full%20Shirdi%20Darshan%20Tour%3F" target="_blank" rel="noopener noreferrer" class="btn-fare-wa">💬 Ask Fare on WhatsApp</a>
-      </div>
-      <div class="pricing-item">
-        <div class="label">Airport / Station Pickup</div>
-        <div class="value">Fixed Honest Pricing</div>
-        <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20What%20is%20the%20pickup%20fare%20from%20Airport%20%2F%20Railway%20Station%3F" target="_blank" rel="noopener noreferrer" class="btn-fare-wa">💬 Ask Fare on WhatsApp</a>
-      </div>
-      <div class="pricing-item">
-        <div class="label">Shani Shingnapur Tour</div>
-        <div class="value">Full Day Package</div>
-        <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20What%20is%20the%20fare%20for%20Shani%20Shingnapur%20Trip%3F" target="_blank" rel="noopener noreferrer" class="btn-fare-wa">💬 Ask Fare on WhatsApp</a>
-      </div>
-    </div>
-
-    <div class="reveal">
-      <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20I%20want%20to%20know%20the%20best%20fare%20for%20auto%20service%20in%20Shirdi." target="_blank" rel="noopener noreferrer" class="btn-primary-wa">
-        💬 Chat on WhatsApp for Instant Fare Quote (9307062992)
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- HOTEL ASSISTANCE -->
-<section id="hotel">
-  <div class="container">
-    <div class="hotel-inner">
-      <div class="hotel-text reveal">
-        <div class="section-header">
-          <span class="section-label">✦ Stay Near Temple</span>
-          <h2 class="section-title">Hotel Booking Assistance</h2>
-          <div class="section-divider"></div>
-        </div>
-        <p>Planning your Shirdi pilgrimage? Let us help you find clean, safe, and comfortable lodging near Sai Baba Samadhi Mandir suitable for families and senior citizens.</p>
-        <ul class="hotel-features">
-          <li>Walking distance to Sai Baba Temple</li>
-          <li>Budget rooms to luxury AC hotels</li>
-          <li>Clean Dharamshala & guest house options</li>
-          <li>Group and family accommodations</li>
-          <li>100% Free guidance — no agent commission</li>
-        </ul>
-        <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Hotel%20Booking%20Assistance%20near%20Sai%20Baba%20Temple." target="_blank" rel="noopener noreferrer" class="btn-primary-wa">💬 WhatsApp for Hotel Advice</a>
-      </div>
-      <div class="hotel-visual reveal">
-        <span class="big-emoji" aria-hidden="true">🏨</span>
-        <h3>Comfortable Stays in Shirdi</h3>
-        <p>We know every corner of Shirdi. Let us connect you with verified, trusted stays for a peaceful yatra.</p>
-        <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Please%20help%20me%20find%20a%20hotel%20in%20Shirdi." target="_blank" rel="noopener noreferrer" class="btn-primary-wa" style="justify-content: center; width: 100%;">
-          💬 Message Driver Mahadev on WhatsApp
+    <!-- 1-CLICK INSTANT RIDE SELECTOR -->
+    <div class="quick-book-box">
+      <div class="quick-book-title">⚡ 1-Tap Instant WhatsApp Booking (9307062992)</div>
+      <div class="quick-rides-grid">
+        <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Local%20Shirdi%20Auto%20Ride.%20Please%20confirm%20availability." target="_blank" rel="noopener noreferrer" class="quick-ride-btn" aria-label="Book Local Ride on WhatsApp">
+          <span class="ride-icon" aria-hidden="true">🛺</span>
+          <span>Local Ride</span>
+        </a>
+        <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Want%20to%20book%20Full%20Shirdi%20Darshan%20Tour.%20Please%20share%20fare%20%26%20details." target="_blank" rel="noopener noreferrer" class="quick-ride-btn" aria-label="Book Darshan Tour on WhatsApp">
+          <span class="ride-icon" aria-hidden="true">🕌</span>
+          <span>Darshan Tour</span>
+        </a>
+        <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Station%20%2F%20Airport%20Pickup%20in%20Shirdi.%20Please%20confirm." target="_blank" rel="noopener noreferrer" class="quick-ride-btn" aria-label="Book Pickup and Drop on WhatsApp">
+          <span class="ride-icon" aria-hidden="true">✈️</span>
+          <span>Pickup / Drop</span>
+        </a>
+        <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Hotel%20Booking%20Assistance%20near%20Sai%20Baba%20Temple." target="_blank" rel="noopener noreferrer" class="quick-ride-btn" aria-label="Inquire Hotel Stay on WhatsApp">
+          <span class="ride-icon" aria-hidden="true">🏨</span>
+          <span>Hotel Stay</span>
+        </a>
+        <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Night%20Darshan%20%2F%20Kakad%20Aarti%20Auto%20Ride." target="_blank" rel="noopener noreferrer" class="quick-ride-btn" aria-label="Book Night Aarti Ride on WhatsApp">
+          <span class="ride-icon" aria-hidden="true">🌙</span>
+          <span>Night Aarti</span>
+        </a>
+        <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Inquiring%20about%20Shani%20Shingnapur%20%2F%20Outstation%20Trip." target="_blank" rel="noopener noreferrer" class="quick-ride-btn" aria-label="Inquire Shani Tour on WhatsApp">
+          <span class="ride-icon" aria-hidden="true">🗺️</span>
+          <span>Shani Tour</span>
         </a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">✦ Pilgrim Reviews</span>
-      <h2 class="section-title">Trusted by Shirdi Devotees</h2>
-      <div class="section-divider"></div>
+    
+    <div class="hero-buttons">
+      <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20I%20want%20to%20book%20an%20auto%20ride%20in%20Shirdi.%20Please%20confirm%20availability." target="_blank" rel="noopener noreferrer" class="btn-primary-wa">
+        <span>💬 Book Your Ride on WhatsApp</span>
+      </a>
+      <a href="tel:9307062992" class="btn-secondary">
+        <span>📞 Call Now: 9307062992</span>
+      </a>
     </div>
 
-    <div class="testimonials-grid">
-      <div class="testimonial-card reveal">
-        <div class="stars" aria-label="5 stars rating">★★★★★</div>
-        <p class="testimonial-text">Mahadev ji picked us up on time from the railway station and gave us an unforgettable darshan tour. Very polite, honest, and knowledgeable driver. Highly recommended for every family visiting Shirdi!</p>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true">R</div>
-          <div>
-            <div class="author-name">Ramesh Sharma</div>
-            <div class="author-place">Delhi, India</div>
+    <div class="hero-trust">
+      <div class="trust-item"><div class="dot" aria-hidden="true"></div>100% Safe Rides</div>
+      <div class="trust-item"><div class="dot" aria-hidden="true"></div>Honest Meter / Fixed Fares</div>
+      <div class="trust-item"><div class="dot" aria-hidden="true"></div>24/7 Available</div>
+      <div class="trust-item"><div class="dot" aria-hidden="true"></div>Devoted Local Driver</div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" aria-label="Services section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">✦ Devotee Services</span>
+        <h2 class="section-title">Our Ride & Tour Services</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="services-grid">
+        <!-- 1. Local Rides -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrap" aria-hidden="true">🛺</div>
+          <h3>Local Shirdi Rides</h3>
+          <p>Swift, hassle-free auto rides anywhere in Shirdi. Ideal for quick trips between hotels, markets, Sai Ashram, and temple gates.</p>
+          <div class="service-actions">
+            <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Local%20Shirdi%20Auto%20Ride.%20Please%20confirm%20availability." target="_blank" rel="noopener noreferrer" class="btn-service-wa">💬 Book on WhatsApp</a>
+            <a href="tel:9307062992" class="btn-service-call">📞 Call</a>
+          </div>
+        </div>
+
+        <!-- 2. Full Darshan -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrap" aria-hidden="true">🕌</div>
+          <h3>Full Darshan Tour</h3>
+          <p>Comprehensive holy tour covering Samadhi Mandir, Dwarkamai, Chavadi, Gurusthan, Lendi Baug, Khandoba Temple and all sacred spots at your own pace.</p>
+          <div class="service-actions">
+            <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Want%20to%20book%20Full%20Shirdi%20Darshan%20Tour.%20Please%20share%20fare%20%26%20details." target="_blank" rel="noopener noreferrer" class="btn-service-wa">💬 Book on WhatsApp</a>
+            <a href="tel:9307062992" class="btn-service-call">📞 Call</a>
+          </div>
+        </div>
+
+        <!-- 3. Airport / Station Pickup -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrap" aria-hidden="true">✈️</div>
+          <h3>Airport & Station Pickup</h3>
+          <p>On-time pickup & drop from Shirdi Airport (SAG), Sainagar Shirdi Railway Station, and Kopargaon. Safe luggage handling and family comfort guaranteed.</p>
+          <div class="service-actions">
+            <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Station%20%2F%20Airport%20Pickup%20in%20Shirdi.%20Please%20confirm." target="_blank" rel="noopener noreferrer" class="btn-service-wa">💬 Book on WhatsApp</a>
+            <a href="tel:9307062992" class="btn-service-call">📞 Call</a>
+          </div>
+        </div>
+
+        <!-- 4. Hotel Booking -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrap" aria-hidden="true">🏨</div>
+          <h3>Hotel Booking Assistance</h3>
+          <p>Free local guidance to find clean, trusted, and budget-friendly hotels, guest houses, and bhakt niwas walking distance from the Mandir.</p>
+          <div class="service-actions">
+            <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Hotel%20Booking%20Assistance%20near%20Sai%20Baba%20Temple." target="_blank" rel="noopener noreferrer" class="btn-service-wa">💬 Book on WhatsApp</a>
+            <a href="tel:9307062992" class="btn-service-call">📞 Call</a>
+          </div>
+        </div>
+
+        <!-- 5. Night Aarti -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrap" aria-hidden="true">🌙</div>
+          <h3>Night & Kakad Aarti Rides</h3>
+          <p>Early morning Kakad Aarti (4:00 AM) and late night Shej Aarti rides. Punctual doorstep pickup so you never miss sacred temple aartis.</p>
+          <div class="service-actions">
+            <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Night%20Darshan%20%2F%20Kakad%20Aarti%20Auto%20Ride." target="_blank" rel="noopener noreferrer" class="btn-service-wa">💬 Book on WhatsApp</a>
+            <a href="tel:9307062992" class="btn-service-call">📞 Call</a>
+          </div>
+        </div>
+
+        <!-- 6. Outstation -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrap" aria-hidden="true">🗺️</div>
+          <h3>Shani Shingnapur & Trips</h3>
+          <p>Full-day and half-day pilgrimage excursions from Shirdi to Shani Shingnapur, Trimbakeshwar Jyotirlinga, Muktidham, and Nashik temples.</p>
+          <div class="service-actions">
+            <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Inquiring%20about%20Shani%20Shingnapur%20%2F%20Outstation%20Trip." target="_blank" rel="noopener noreferrer" class="btn-service-wa">💬 Book on WhatsApp</a>
+            <a href="tel:9307062992" class="btn-service-call">📞 Call</a>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="testimonial-card reveal">
-        <div class="stars" aria-label="5 stars rating">★★★★★</div>
-        <p class="testimonial-text">We booked on WhatsApp and within 5 minutes he arrived at our hotel. Arranged Kakad Aarti ride and station drop with fair rates. Wonderful devotee driver. Will book again on our next Shirdi trip.</p>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true">S</div>
-          <div>
-            <div class="author-name">Sunita Patel</div>
-            <div class="author-place">Ahmedabad, Gujarat</div>
-          </div>
+  <!-- PRICING -->
+  <section id="pricing" aria-label="Pricing section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">✦ Honest & Transparent</span>
+        <h2 class="section-title">Affordable Fare Rates</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="reveal">
+        <div class="pricing-badge">
+          🏆 Most Honest & Fair Fare Rates in Shirdi
         </div>
       </div>
 
-      <div class="testimonial-card reveal">
-        <div class="stars" aria-label="5 stars rating">★★★★★</div>
-        <p class="testimonial-text">Best auto service in Shirdi! Waited patiently during our long darshan queues, helped with senior citizens and luggage. May Sai Baba bless Mahadev ji for his honest service.</p>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true">P</div>
-          <div>
-            <div class="author-name">Priya Menon</div>
-            <div class="author-place">Bangalore, Karnataka</div>
+      <p class="pricing-note reveal">
+        No hidden charges, no tourist surge pricing. We treat every passenger as Sai Baba's devotee with complete honesty and transparent fares.
+      </p>
+
+      <div class="pricing-items reveal">
+        <div class="pricing-item">
+          <div class="label">Local Shirdi Rides</div>
+          <div class="value">Best Rates Guaranteed</div>
+          <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20What%20is%20the%20fare%20for%20Local%20Shirdi%20Rides%3F" target="_blank" rel="noopener noreferrer" class="btn-fare-wa">💬 Ask Fare on WhatsApp</a>
+        </div>
+        <div class="pricing-item">
+          <div class="label">Full Darshan Package</div>
+          <div class="value">Affordable Custom Tour</div>
+          <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20What%20is%20the%20fare%20for%20Full%20Shirdi%20Darshan%20Tour%3F" target="_blank" rel="noopener noreferrer" class="btn-fare-wa">💬 Ask Fare on WhatsApp</a>
+        </div>
+        <div class="pricing-item">
+          <div class="label">Airport / Station Pickup</div>
+          <div class="value">Fixed Honest Pricing</div>
+          <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20What%20is%20the%20pickup%20fare%20from%20Airport%20%2F%20Railway%20Station%3F" target="_blank" rel="noopener noreferrer" class="btn-fare-wa">💬 Ask Fare on WhatsApp</a>
+        </div>
+        <div class="pricing-item">
+          <div class="label">Shani Shingnapur Tour</div>
+          <div class="value">Full Day Package</div>
+          <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20What%20is%20the%20fare%20for%20Shani%20Shingnapur%20Trip%3F" target="_blank" rel="noopener noreferrer" class="btn-fare-wa">💬 Ask Fare on WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20I%20want%20to%20know%20the%20best%20fare%20for%20auto%20service%20in%20Shirdi." target="_blank" rel="noopener noreferrer" class="btn-primary-wa">
+          💬 Chat on WhatsApp for Instant Fare Quote (9307062992)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOTEL ASSISTANCE -->
+  <section id="hotel" aria-label="Hotel booking assistance section">
+    <div class="container">
+      <div class="hotel-inner">
+        <div class="hotel-text reveal">
+          <div class="section-header">
+            <span class="section-label">✦ Stay Near Temple</span>
+            <h2 class="section-title">Hotel Booking Assistance</h2>
+            <div class="section-divider"></div>
+          </div>
+          <p>Planning your Shirdi pilgrimage? Let us help you find clean, safe, and comfortable lodging near Sai Baba Samadhi Mandir suitable for families and senior citizens.</p>
+          <ul class="hotel-features">
+            <li>Walking distance to Sai Baba Temple</li>
+            <li>Budget rooms to luxury AC hotels</li>
+            <li>Clean Dharamshala & guest house options</li>
+            <li>Group and family accommodations</li>
+            <li>100% Free guidance — no agent commission</li>
+          </ul>
+          <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Need%20Hotel%20Booking%20Assistance%20near%20Sai%20Baba%20Temple." target="_blank" rel="noopener noreferrer" class="btn-primary-wa">💬 WhatsApp for Hotel Advice</a>
+        </div>
+        <div class="hotel-visual reveal">
+          <span class="big-emoji" aria-hidden="true">🏨</span>
+          <h3>Comfortable Stays in Shirdi</h3>
+          <p>We know every corner of Shirdi. Let us connect you with verified, trusted stays for a peaceful yatra.</p>
+          <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20Please%20help%20me%20find%20a%20hotel%20in%20Shirdi." target="_blank" rel="noopener noreferrer" class="btn-primary-wa" style="justify-content: center; width: 100%;">
+            💬 Message Driver Mahadev on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" aria-label="Testimonials section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">✦ Pilgrim Reviews</span>
+        <h2 class="section-title">Trusted by Shirdi Devotees</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="stars" aria-label="5 stars rating">★★★★★</div>
+          <p class="testimonial-text">Mahadev ji picked us up on time from the railway station and gave us an unforgettable darshan tour. Very polite, honest, and knowledgeable driver. Highly recommended for every family visiting Shirdi!</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">R</div>
+            <div>
+              <div class="author-name">Ramesh Sharma</div>
+              <div class="author-place">Delhi, India</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="stars" aria-label="5 stars rating">★★★★★</div>
+          <p class="testimonial-text">We booked on WhatsApp and within 5 minutes he arrived at our hotel. Arranged Kakad Aarti ride and station drop with fair rates. Wonderful devotee driver. Will book again on our next Shirdi trip.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">S</div>
+            <div>
+              <div class="author-name">Sunita Patel</div>
+              <div class="author-place">Ahmedabad, Gujarat</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="stars" aria-label="5 stars rating">★★★★★</div>
+          <p class="testimonial-text">Best auto service in Shirdi! Waited patiently during our long darshan queues, helped with senior citizens and luggage. May Sai Baba bless Mahadev ji for his honest service.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">P</div>
+            <div>
+              <div class="author-name">Priya Menon</div>
+              <div class="author-place">Bangalore, Karnataka</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT & BOOKING FORM -->
-<section id="contact">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">✦ Direct Communication</span>
-      <h2 class="section-title">Contact & Custom Booking</h2>
-      <div class="section-divider"></div>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <div class="contact-card">
-          <div class="contact-card-icon" aria-hidden="true">💬</div>
-          <div>
-            <div class="contact-card-label">WhatsApp Direct Booking</div>
-            <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20I%20want%20to%20book%20an%20auto%20ride%20in%20Shirdi." target="_blank" rel="noopener noreferrer" class="contact-card-value">+91 93070 62992</a>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-icon" aria-hidden="true">📞</div>
-          <div>
-            <div class="contact-card-label">Direct Phone Call</div>
-            <a href="tel:9307062992" class="contact-card-value">9307062992</a>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-icon" aria-hidden="true">📍</div>
-          <div>
-            <div class="contact-card-label">Base Location</div>
-            <span class="contact-card-value">Shirdi Temple Area, Maharashtra</span>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-icon" aria-hidden="true">⏰</div>
-          <div>
-            <div class="contact-card-label">Service Hours</div>
-            <span class="contact-card-value">24 Hours / 7 Days a Week</span>
-          </div>
-        </div>
+  <!-- CONTACT & BOOKING FORM -->
+  <section id="contact" aria-label="Contact and booking section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">✦ Direct Communication</span>
+        <h2 class="section-title">Contact & Custom Booking</h2>
+        <div class="section-divider"></div>
       </div>
 
-      <!-- Semantic Booking Form -->
-      <form class="contact-form reveal" id="bookingForm" onsubmit="submitBookingForm(event)" novalidate>
-        <div id="formFeedback" class="form-feedback" role="alert"></div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-card">
+            <div class="contact-card-icon" aria-hidden="true">💬</div>
+            <div>
+              <div class="contact-card-label">WhatsApp Direct Booking</div>
+              <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20I%20want%20to%20book%20an%20auto%20ride%20in%20Shirdi." target="_blank" rel="noopener noreferrer" class="contact-card-value">+91 93070 62992</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon" aria-hidden="true">📞</div>
+            <div>
+              <div class="contact-card-label">Direct Phone Call</div>
+              <a href="tel:9307062992" class="contact-card-value">9307062992</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon" aria-hidden="true">📍</div>
+            <div>
+              <div class="contact-card-label">Base Location</div>
+              <span class="contact-card-value">Shirdi Temple Area, Maharashtra</span>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon" aria-hidden="true">⏰</div>
+            <div>
+              <div class="contact-card-label">Service Hours</div>
+              <span class="contact-card-value">24 Hours / 7 Days a Week</span>
+            </div>
+          </div>
+        </div>
 
-        <div class="form-group">
-          <label for="bookingName">Your Name *</label>
-          <input type="text" id="bookingName" name="name" placeholder="Enter your full name" required autocomplete="name">
-        </div>
-        <div class="form-group">
-          <label for="bookingPhone">Phone / WhatsApp Number *</label>
-          <input type="tel" id="bookingPhone" name="phone" placeholder="e.g. 9876543210" required autocomplete="tel">
-        </div>
-        <div class="form-group">
-          <label for="bookingService">Select Ride / Tour</label>
-          <select id="bookingService" name="service">
-            <option value="Local Shirdi Rides">Local Shirdi Rides</option>
-            <option value="Full Darshan Tour">Full Darshan Tour</option>
-            <option value="Airport / Station Pickup">Airport / Station Pickup</option>
-            <option value="Hotel Booking Assistance">Hotel Booking Assistance</option>
-            <option value="Night Darshan / Kakad Aarti">Night Darshan / Kakad Aarti</option>
-            <option value="Shani Shingnapur Tour">Shani Shingnapur Tour</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="bookingDetails">Travel Date & Note (Optional)</label>
-          <textarea id="bookingDetails" name="details" placeholder="Travel date, passenger count, pickup point..."></textarea>
-        </div>
-        <button type="submit" class="btn-submit-wa" id="submitBookingBtn">
-          <span>💬 Send Short WhatsApp Message to Driver</span>
-        </button>
-        <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; text-align: center; margin-top: 0.2rem;">
-          Driver WhatsApp: <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20I%20want%20to%20book%20an%20auto%20ride%20in%20Shirdi." style="color: var(--gold-light); font-weight: 700;">+91 93070 62992</a>
-        </p>
-      </form>
+        <!-- Semantic Booking Form -->
+        <form class="contact-form reveal" id="bookingForm" onsubmit="submitBookingForm(event)" novalidate>
+          <div id="formFeedback" class="form-feedback" role="alert" aria-live="polite"></div>
+
+          <div class="form-group">
+            <label for="bookingName">Your Name *</label>
+            <input type="text" id="bookingName" name="name" placeholder="Enter your full name" required autocomplete="name" aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="bookingPhone">Phone / WhatsApp Number *</label>
+            <input type="tel" id="bookingPhone" name="phone" placeholder="e.g. 9876543210" required autocomplete="tel" aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="bookingService">Select Ride / Tour</label>
+            <select id="bookingService" name="service">
+              <option value="Local Shirdi Rides">Local Shirdi Rides</option>
+              <option value="Full Darshan Tour">Full Darshan Tour</option>
+              <option value="Airport / Station Pickup">Airport / Station Pickup</option>
+              <option value="Hotel Booking Assistance">Hotel Booking Assistance</option>
+              <option value="Night Darshan / Kakad Aarti">Night Darshan / Kakad Aarti</option>
+              <option value="Shani Shingnapur Tour">Shani Shingnapur Tour</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bookingDetails">Travel Date & Note (Optional)</label>
+            <textarea id="bookingDetails" name="details" placeholder="Travel date, passenger count, pickup point..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit-wa" id="submitBookingBtn">
+            <span>💬 Send Short WhatsApp Message to Driver</span>
+          </button>
+          <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; text-align: center; margin-top: 0.2rem;">
+            Driver WhatsApp: <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20I%20want%20to%20book%20an%20auto%20ride%20in%20Shirdi." style="color: var(--gold-light); font-weight: 700;">+91 93070 62992</a>
+          </p>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <!-- FOOTER -->
-<footer>
+<footer role="contentinfo">
   <span class="om-footer" aria-hidden="true">ॐ</span>
   <div class="footer-logo">Mahadev Baburao Karad Auto Service</div>
   <p class="footer-tagline">Safe, Honest & Affordable Auto Rickshaw Service in Shirdi — Serving Sai Baba Devotees</p>
@@ -1704,6 +1803,28 @@
     }
   });
 
+  // Scrollspy to highlight active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('#desktopNavLinks a');
+
+  function updateActiveNavLink() {
+    let scrollPosition = window.scrollY + 120;
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      const id = section.getAttribute('id');
+      if (scrollPosition >= top && scrollPosition < top + height) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }
+  window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+
   // Scroll reveal with IntersectionObserver
   if ('IntersectionObserver' in window) {
     const reveals = document.querySelectorAll('.reveal');
@@ -1730,6 +1851,16 @@
     feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
+  // Real-time input clearing of error styling
+  const nameInput = document.getElementById('bookingName');
+  const phoneInput = document.getElementById('bookingPhone');
+  if (nameInput) {
+    nameInput.addEventListener('input', () => nameInput.classList.remove('field-error'));
+  }
+  if (phoneInput) {
+    phoneInput.addEventListener('input', () => phoneInput.classList.remove('field-error'));
+  }
+
   // Booking Form Submission to WhatsApp Driver Number 9307062992
   function submitBookingForm(event) {
     if (event) event.preventDefault();
@@ -1745,6 +1876,7 @@
     const details = detailsInput ? detailsInput.value.trim() : '';
 
     if (!name) {
+      if (nameInput) nameInput.classList.add('field-error');
       showFormFeedback('Please enter your full name.', 'error');
       if (nameInput) nameInput.focus();
       return false;
@@ -1754,6 +1886,7 @@
     const digitsOnly = phone.replace(/\D/g, '');
 
     if (!phone || digitsOnly.length < 10) {
+      if (phoneInput) phoneInput.classList.add('field-error');
       showFormFeedback('Please enter a valid mobile number with at least 10 digits.', 'error');
       if (phoneInput) phoneInput.focus();
       return false;

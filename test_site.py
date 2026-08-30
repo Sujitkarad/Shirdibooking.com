@@ -1,6 +1,6 @@
 """
 Automated Test Suite for Sujitkarad/Shirdibooking.com
-Tests Premium HTML structure, CSS responsiveness rules, JS logic, form validation, and short WhatsApp messages to 9307062992.
+Tests Premium HTML structure, CSS responsiveness rules, JS logic, form validation, SEO Schema, and short WhatsApp messages to 9307062992.
 """
 
 import os
@@ -18,7 +18,7 @@ def test_files_exist():
     print("  --> PASS: index.html and book.html exist.")
 
 def test_html_and_meta():
-    print("TEST 2: Checking HTML metadata, favicon, and OpenGraph tags...")
+    print("TEST 2: Checking HTML metadata, favicon, SEO schema, and OpenGraph tags...")
     for filename in ["index.html", "book.html"]:
         with open(os.path.join(WORKSPACE, filename), "r", encoding="utf-8") as f:
             content = f.read()
@@ -28,9 +28,14 @@ def test_html_and_meta():
         assert 'og:title' in content, f"Missing og:title in {filename}"
         assert 'og:description' in content, f"Missing og:description in {filename}"
         assert 'og:image' in content, f"Missing og:image in {filename}"
+        assert 'twitter:card' in content, f"Missing twitter:card in {filename}"
+        assert 'application/ld+json' in content, f"Missing Schema.org JSON-LD in {filename}"
+        assert 'TaxiService' in content, f"Missing TaxiService in Schema JSON-LD in {filename}"
         assert '<html lang="en">' in content, f"Missing lang='en' in {filename}"
         assert 'Cinzel' in content, f"Missing Cinzel premium font in {filename}"
-    print("  --> PASS: HTML metadata, typography and favicons verified in all pages.")
+        assert 'skip-link' in content, f"Missing skip-link accessibility feature in {filename}"
+        assert '<main id="main-content">' in content, f"Missing main landmark in {filename}"
+    print("  --> PASS: HTML metadata, typography, SEO JSON-LD schema and favicons verified in all pages.")
 
 def test_floating_action_buttons_css():
     print("TEST 3: Checking floating action buttons mobile CSS fix...")
