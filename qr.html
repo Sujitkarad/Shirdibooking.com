@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shirdi Auto Booking – Printable QR Code & Promo Cards</title>
+<meta name="description" content="Official QR Code & printable promo stickers for Mahadev Baburao Karad Auto Service Shirdi. Scan to book rides instantly on WhatsApp 9307062992.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FF6B00'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' font-size='60'>🛺</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --saffron: #FF6B00;
+    --saffron-light: #FFA048;
+    --gold: #D4AF37;
+    --gold-light: #F9DC66;
+    --bg-dark: #0B0401;
+    --bg-card: rgba(26, 12, 3, 0.85);
+    --border-gold: rgba(212, 175, 55, 0.3);
+    --text-white: #FFFCF5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+    color: #FFF;
+    margin-bottom: 0.5rem;
+  }
+
+  .header h1 span {
+    background: linear-gradient(90deg, #FFA048, #F9DC66);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .header p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+  }
+
+  .nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gold-light);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding: 0.4rem 1rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50px;
+    border: 1px solid var(--border-gold);
+    transition: all 0.2s;
+  }
+  .nav-back:hover {
+    background: var(--gold);
+    color: #000;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-gold);
+    border-radius: 24px;
+    padding: 2.2rem 1.8rem;
+    text-align: center;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    color: var(--gold-light);
+    margin-bottom: 0.4rem;
+  }
+
+  .card-desc {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.88rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .qr-box {
+    background: white;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+  }
+
+  .qr-box img {
+    width: 200px;
+    height: 200px;
+    display: block;
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn {
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: none;
+  }
+
+  .btn-png {
+    background: linear-gradient(135deg, var(--saffron), #D45500);
+    color: white;
+  }
+  .btn-svg {
+    background: rgba(255,255,255,0.1);
+    color: var(--gold-light);
+    border: 1px solid var(--gold);
+  }
+  .btn-print {
+    background: linear-gradient(135deg, #25D366, #1EBE5D);
+    color: white;
+    font-size: 1.05rem;
+    padding: 0.9rem 2rem;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  }
+  .btn:hover { transform: translateY(-2px); }
+
+  /* PRINTABLE POSTER TEMPLATE */
+  .printable-poster {
+    background: #FFFFFF;
+    color: #120600;
+    border: 8px solid #FF6B00;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 550px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  }
+
+  .poster-header {
+    border-bottom: 2px dashed #D4AF37;
+    padding-bottom: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .poster-om { font-size: 2.5rem; color: #FF6B00; line-height: 1; }
+  .poster-title { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 800; color: #160801; margin-top: 0.2rem; }
+  .poster-sub { font-size: 0.95rem; font-weight: 700; color: #D45500; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .poster-qr {
+    background: white;
+    padding: 0.8rem;
+    border: 2px solid #120600;
+    border-radius: 12px;
+    display: inline-block;
+    margin: 1rem 0;
+  }
+  .poster-qr img { width: 220px; height: 220px; display: block; }
+
+  .poster-footer {
+    background: #160801;
+    color: #FFFCF5;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+  }
+  .poster-phone { font-size: 1.4rem; font-weight: 800; color: #F9DC66; }
+  .poster-services { font-size: 0.85rem; margin-top: 0.3rem; opacity: 0.9; }
+
+  /* PRINT MEDIA STYLES */
+  @media print {
+    body { background: white !important; padding: 0 !important; color: black !important; }
+    .no-print { display: none !important; }
+    .printable-poster {
+      box-shadow: none !important;
+      border: 6px solid #FF6B00 !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="no-print">
+    <a href="index.html" class="nav-back">← Back to Website</a>
+    
+    <div class="header">
+      <h1>Official <span>Shirdi Booking</span> QR Codes</h1>
+      <p>Scan with any phone camera or Google Lens to book instantly on WhatsApp or view website.</p>
+    </div>
+
+    <!-- QR CODE OPTIONS -->
+    <div class="grid">
+      <!-- 1. Direct WhatsApp QR -->
+      <div class="card">
+        <div class="card-title">💬 WhatsApp 1-Tap Booking</div>
+        <div class="card-desc">Instantly opens WhatsApp chat with Driver Mahadev (9307062992).</div>
+        <div class="qr-box">
+          <img src="qr_whatsapp.png" alt="WhatsApp Booking QR Code">
+        </div>
+        <div class="btn-group">
+          <a href="qr_whatsapp.png" download="Shirdi_WhatsApp_Booking_QR.png" class="btn btn-png">📥 Download PNG</a>
+          <a href="qr_whatsapp.svg" download="Shirdi_WhatsApp_Booking_QR.svg" class="btn btn-svg">📐 Vector SVG</a>
+        </div>
+      </div>
+
+      <!-- 2. Website Link QR -->
+      <div class="card">
+        <div class="card-title">🌐 ShirdiBooking.com Website</div>
+        <div class="card-desc">Opens the official website with full darshan packages & pricing.</div>
+        <div class="qr-box">
+          <img src="qr_website.png" alt="Website QR Code">
+        </div>
+        <div class="btn-group">
+          <a href="qr_website.png" download="ShirdiBooking_Website_QR.png" class="btn btn-png">📥 Download PNG</a>
+          <a href="qr_website.svg" download="ShirdiBooking_Website_QR.svg" class="btn btn-svg">📐 Vector SVG</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <button onclick="window.print()" class="btn btn-print">
+        🖨️ Print Auto Rickshaw Poster & Visiting Sticker
+      </button>
+      <p style="font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 0.5rem;">
+        Click above to print the ready-to-stick poster below directly on A4 paper or sticker sheets.
+      </p>
+    </div>
+  </div>
+
+  <!-- PRINTABLE POSTER / AUTO STICKER -->
+  <div class="printable-poster">
+    <div class="poster-header">
+      <div class="poster-om">ॐ</div>
+      <div class="poster-title">Mahadev Baburao Karad</div>
+      <div class="poster-sub">Auto Rickshaw & Sai Baba Darshan Tours • Shirdi</div>
+    </div>
+
+    <p style="font-size: 0.95rem; font-weight: 700; color: #160801;">
+      📲 SCAN QR CODE TO BOOK ON WHATSAPP
+    </p>
+
+    <div class="poster-qr">
+      <img src="qr_whatsapp.png" alt="Scan to Book on WhatsApp">
+    </div>
+
+    <div class="poster-footer">
+      <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: #FFA048;">24/7 Available for Devotees</div>
+      <div class="poster-phone">📞 93070 62992</div>
+      <div class="poster-services">
+        🛺 Local Rides • 🕌 Full Darshan Tour • ✈️ Airport & Station Pickup • 🏨 Hotel Help
+      </div>
+      <div style="font-size: 0.78rem; margin-top: 0.4rem; opacity: 0.8;">
+        Website: shirdibooking.com
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
