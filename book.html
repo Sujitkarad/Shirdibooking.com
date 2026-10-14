@@ -1351,7 +1351,7 @@
       <a href="https://wa.me/919307062992?text=🙏%20Sai%20Ram!%20I%20want%20to%20book%20an%20auto%20ride%20in%20Shirdi.%20Please%20confirm%20availability." target="_blank" rel="noopener noreferrer" class="btn-nav-wa">💬 WhatsApp</a>
       <a href="tel:9307062992" class="nav-call">📞 Call Now</a>
     </div>
-    <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
+    <button type="button" class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -1910,12 +1910,8 @@
 
     const waUrl = `https://wa.me/919307062992?text=${encodeURIComponent(waMessage)}`;
 
-    // Resilient redirection: open tab or fallback to location navigation
-    const newWindow = window.open(waUrl, '_blank');
-    if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-      window.location.href = waUrl;
-    }
-
+    // Navigate directly to WhatsApp. This avoids popup blockers on mobile browsers.
+    window.location.href = waUrl;
     return false;
   }
 </script>
