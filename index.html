@@ -113,6 +113,19 @@ a{transition:color .2s ease}
 @media(max-width:767px){.top_panel_navi{height:82px}.top_panel_navi .content_wrap{flex-wrap:nowrap}.sb-brand{min-width:0}.sb-brand-mark{width:42px;height:42px}.sb-brand-text{font-size:23px}.menu_main_nav_area{display:block!important}.menu_main_nav{display:flex;gap:3px}.menu_main_nav>li>a{font-size:11px;padding:10px 9px!important}.menu_main_nav>li.current-menu-item>a{padding:10px 12px!important}.menu_mobile_button{display:none!important}.sb-hero{height:65vh;min-height:480px;max-height:620px}.sb-hero-slide{background-size:100% 100%;background-position:center center}.sb-hero-copy{width:calc(100% - 36px);padding:0 0 20px}.sb-hero-kicker{font-size:clamp(12px,3vw,18px);letter-spacing:1.5px}.sb-hero h1{font-size:clamp(34px,8vw,54px);line-height:1.15}.sb-hero-arrow{width:35px;height:35px}.sb-hero-arrow.prev{left:9px}.sb-hero-arrow.next{right:9px}.sb-feature-grid{gap:8px}.sb-feature{padding:15px 6px}.sb-feature h3{font-size:17px}.sb-feature p{font-size:14px}.sb-orange-band .content_wrap,.sb-contact-band .content_wrap{align-items:flex-start;flex-direction:column}.sb-about-grid{grid-template-columns:1fr}.sb-about-photo{min-height:350px}.sb-about-copy{padding:43px 23px 50px}.sb-driver-grid,.sb-trip-grid,.sb-steps{gap:12px}.sb-driver-card,.sb-trip-card{padding:22px 13px}.sb-contact-actions{width:100%}.sb-contact-actions a{flex:1;text-align:center}}
 @media(max-width:480px){.sb-hero h1{font-size:clamp(34px,8vw,43px);letter-spacing:-.7px}.sb-feature-grid,.sb-driver-grid,.sb-trip-grid,.sb-steps{grid-template-columns:1fr}.sb-feature{padding:14px}.sb-feature-icon{margin-bottom:7px}.sb-hero{height:590px}.sb-hero-kicker{font-size:18px}.sb-hero h1{font-size:39px}.sb-hero-actions a{padding:12px 16px}.sb-about-photo{min-height:290px}.sb-contact-actions{flex-direction:column}.sb-footer-bottom .content_wrap{justify-content:center;text-align:center}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sb-hero-slide{transition:none;animation:none!important;transform:none!important}}
+
+/* Booking widget: compact desktop layout and accessible mobile stack. */
+.sb-ride-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:12px;align-items:end;width:min(980px,100%);margin:35px auto 0;padding:16px;border-radius:12px;background:#fffffff2;box-shadow:0 14px 45px #0003;text-align:left}
+.sb-ride-field{min-width:0}
+.sb-ride-field label{display:block;margin:0 0 7px;color:#222;font:700 13px/1.3 Lato,sans-serif}
+.sb-ride-field select,.sb-other-location{box-sizing:border-box;display:block;width:100%;height:48px;padding:0 12px;border:1px solid #cbd1d5;border-radius:6px;background:#fff;color:#242424;font:500 14px Lato,sans-serif}
+.sb-other-location[hidden]{display:none}
+.sb-other-location:not([hidden]){margin-top:8px}
+.sb-ride-submit{height:48px;min-width:154px;padding:0 20px;border:2px solid #000;border-radius:6px;background:#20bf63;color:#fff;font:800 15px Lato,sans-serif;cursor:pointer;white-space:nowrap}
+.sb-ride-submit:hover,.sb-ride-submit:focus-visible{background:#15974c;color:#fff}
+.sb-ride-form :focus-visible{outline:3px solid #ffb900;outline-offset:2px}
+@media(max-width:767px){.sb-ride-form{grid-template-columns:1fr;gap:10px;margin-top:24px;padding:14px}.sb-ride-submit{width:100%}.sb-hero{min-height:660px;height:auto}.sb-hero-copy{padding:35px 0 55px}}
+@media(max-width:480px){.sb-hero{height:auto;min-height:680px}.sb-hero h1{font-size:34px}.sb-hero-kicker{font-size:15px}}
 </style>
 </head>
 <body class="home page-template-default page page-id-52 body_tag body_style_wide scheme_default is_stream blog_style_excerpt sidebar_hide expand_content remove_margins header_style_header-default header_position_over header_title_off menu_style_top no_layout">
@@ -139,7 +152,11 @@ a{transition:color .2s ease}
 <section class="sb-hero" id="home" aria-label="Shirdi Booking home">
 <div class="sb-hero-slide active" style="background-image:url('https://www.tukxi.in/wp-content/uploads/2021/01/web_HD2.jpg')"></div>
 <div class="sb-hero-slide" style="background-image:url('https://www.tukxi.in/wp-content/uploads/2021/01/web_HD3.jpg')"></div>
-<div class="sb-hero-copy"><h1>Your everyday ride is here.</h1><p class="sb-hero-kicker">Booking an Auto just got easier</p><div class="sb-hero-actions"><a href="https://wa.me/919307062992?text=Hello!%20I%20want%20to%20book%20an%20auto%20ride%20in%20Shirdi.%20Please%20share%20availability%20and%20fare." target="_blank" rel="noopener noreferrer">Book an Auto Now</a><a class="secondary" href="https://wa.me/919307062992?text=Hello%2C%20I%20want%20to%20book%20an%20auto%20in%20Shirdi" target="_blank" rel="noopener">WhatsApp Us</a></div></div>
+<div class="sb-hero-copy"><h1>Your everyday ride is here.</h1><p class="sb-hero-kicker">Booking an Auto just got easier</p><div class="sb-hero-actions"><a href="https://wa.me/919307062992?text=Hello!%20I%20want%20to%20book%20an%20auto%20ride%20in%20Shirdi.%20Please%20share%20availability%20and%20fare." target="_blank" rel="noopener noreferrer">Book an Auto Now</a><a class="secondary" href="https://wa.me/919307062992?text=Hello%2C%20I%20want%20to%20book%20an%20auto%20in%20Shirdi" target="_blank" rel="noopener">WhatsApp Us</a></div><form id="ride-booking" class="sb-ride-form" aria-label="Book an auto ride">
+<div class="sb-ride-field"><label for="ride-pickup">Pickup location</label><select id="ride-pickup" name="pickup" required><option value="" selected disabled>Select pickup</option><option>Shirdi Sai Baba Temple</option><option>Shirdi Bus Stand</option><option>Sainagar Shirdi Railway Station</option><option>Shirdi Airport</option><option>Hotel in Shirdi</option><option>Other location</option></select><input id="ride-pickup-other" class="sb-other-location" type="text" placeholder="Enter pickup location" aria-label="Other pickup location" maxlength="120" hidden></div>
+<div class="sb-ride-field"><label for="ride-drop">Drop location</label><select id="ride-drop" name="drop" required><option value="" selected disabled>Select drop</option><option>Shirdi Sai Baba Temple</option><option>Shirdi Bus Stand</option><option>Sainagar Shirdi Railway Station</option><option>Shirdi Airport</option><option>Hotel in Shirdi</option><option>Shani Shingnapur</option><option>Other location</option></select><input id="ride-drop-other" class="sb-other-location" type="text" placeholder="Enter drop location" aria-label="Other drop location" maxlength="120" hidden></div>
+<button type="submit" class="sb-ride-submit">Book Now <span aria-hidden="true">→</span></button>
+</form></div>
 <button class="sb-hero-arrow prev" type="button" aria-label="Previous slide">‹</button><button class="sb-hero-arrow next" type="button" aria-label="Next slide">›</button>
 <div class="sb-hero-dots"><button type="button" class="active" aria-label="Slide 1"></button><button type="button" aria-label="Slide 2"></button></div>
 </section>
@@ -180,7 +197,7 @@ a{transition:color .2s ease}
 <aside class="column-1_3 widget"><h3 class="widget_title">Contact Info</h3><div class="contacts_info"><div class="contacts_info_item"><span class="contacts_info_icon icon-phone"></span><a href="tel:+919307062992">+91 93070 62992</a></div><div class="contacts_info_item"><span class="contacts_info_icon icon-location"></span>Shirdi, Maharashtra, India</div><div class="contacts_info_item"><span class="contacts_info_icon icon-mail"></span><a href="https://wa.me/919307062992" target="_blank" rel="noopener">WhatsApp Booking</a></div></div></aside>
 </div></div></div></div><div class="sb-footer-bottom"><div class="content_wrap"><span>© <span id="sb-year"></span> Shirdi Booking. All rights reserved.</span><span>Made for your journey in Shirdi.</span></div></div></footer>
 </div></div>
-<a class="sb-wa-float" href="https://wa.me/919307062992?text=Hello%2C%20I%20want%20to%20book%20an%20auto%20in%20Shirdi" target="_blank" rel="noopener" aria-label="Book now on WhatsApp">Book Now</a>
+<a class="sb-wa-float" href="#ride-booking" aria-label="Choose pickup and drop to book now">Book Now</a>
 <script>
 (function(){
   var menuButton=document.querySelector('.menu_mobile_button');
@@ -200,6 +217,32 @@ a{transition:color .2s ease}
   if(next)next.addEventListener('click',function(){showSlide(active+1);restart()});
   dots.forEach(function(d,n){d.addEventListener('click',function(){showSlide(n);restart()})});
   restart();
+
+  var rideForm=document.getElementById('ride-booking');
+  if(rideForm){
+    ['pickup','drop'].forEach(function(field){
+      var select=document.getElementById('ride-'+field);
+      var other=document.getElementById('ride-'+field+'-other');
+      select.addEventListener('change',function(){
+        var custom=select.value==='Other location';
+        other.hidden=!custom;
+        other.required=custom;
+        if(!custom)other.value='';
+      });
+    });
+    rideForm.addEventListener('submit',function(event){
+      event.preventDefault();
+      if(!rideForm.reportValidity())return;
+      function locationValue(field){
+        var selected=document.getElementById('ride-'+field);
+        return selected.value==='Other location'?document.getElementById('ride-'+field+'-other').value.trim():selected.value;
+      }
+      var pickup=locationValue('pickup'),drop=locationValue('drop');
+      if(!pickup||!drop)return;
+      var message='Hello! I want to book an auto ride in Shirdi.\nPickup: '+pickup+'\nDrop: '+drop+'\nPlease confirm availability and fare.';
+      window.location.href='https://wa.me/919307062992?text='+encodeURIComponent(message);
+    });
+  }
   var year=document.getElementById('sb-year');if(year)year.textContent=new Date().getFullYear();
 })();
 </script>
