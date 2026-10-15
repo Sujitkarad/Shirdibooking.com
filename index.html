@@ -4,9 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shirdi Booking | Auto Rickshaw, Sai Baba Darshan & Local Rides</title>
-<meta name="description" content="Arrange auto rickshaw rides in Shirdi for Sai Baba darshan, local travel, railway station pickup and nearby tours. Contact Shirdi Booking directly.">
+<meta name="description" content="Book auto-rickshaw rides in Shirdi for Sai Baba darshan, local travel, railway station pickup and nearby tours. Request availability and fare directly on WhatsApp.">
+<link rel="canonical" href="https://shirdibooking-com.vercel.app/">
 <meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://shirdibooking-com.vercel.app/">
+<meta property="og:site_name" content="Shirdi Booking">
 <meta property="og:title" content="Shirdi Booking | Your Everyday Ride in Shirdi">
 <meta property="og:description" content="Local auto rides, Sai Baba darshan and nearby tours in Shirdi. Book directly by phone or WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,10 +41,10 @@ a{transition:color .2s ease}
 .menu_main_nav>li.current-menu-item>a{background:#ffb900;color:#fff;border-radius:28px;padding:12px 27px!important}
 .sb-book-link{display:inline-block!important;padding:13px 21px!important;background:#ff9800!important;color:#fff!important;font:700 14px Dosis,sans-serif!important;text-transform:uppercase;letter-spacing:.7px}
 .sb-book-link:hover{background:#e98a00!important;color:#fff!important}
-.sb-hero{position:relative;min-height:660px;height:calc(100vh - 102px);max-height:790px;overflow:hidden;background:#fff;color:#fff;display:flex;align-items:center}
-.sb-hero-slide{position:absolute;inset:0;background-color:#fff;background-position:center center;background-size:100% 100%;background-repeat:no-repeat;opacity:0;transition:opacity 1.15s ease-in-out;transform:scale(1.015)}
+.sb-hero{position:relative;min-height:660px;height:calc(100vh - 102px);max-height:790px;overflow:hidden;background:#34302c;color:#fff;display:flex;align-items:center}
+.sb-hero-slide{position:absolute;inset:0;background-color:#34302c;background-position:center center;background-size:cover;background-repeat:no-repeat;opacity:0;transition:opacity 1.15s ease-in-out;transform:scale(1.015)}
 .sb-hero-slide.active{opacity:1;animation:sbHeroDrift 7s ease-in-out both}
-.sb-hero-slide:after{content:"";position:absolute;inset:0;background:transparent}
+.sb-hero-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,.42) 100%)}
 @keyframes sbHeroDrift{0%{transform:scale(1.015)}100%{transform:scale(1.08)}}
 .sb-hero-copy{position:relative;z-index:2;width:min(1240px,calc(100% - 50px));margin:0 auto;text-align:center;padding:0 0 30px;transform:translateY(-8px)}
 .sb-hero-kicker{font:800 clamp(16px,2.55vw,33px)/1.35 Dosis,sans-serif;text-transform:uppercase;letter-spacing:3px;color:#fff;margin:22px 0 0}
@@ -125,6 +128,7 @@ a{transition:color .2s ease}
 .sb-ride-submit:hover,.sb-ride-submit:focus-visible{background:#15974c;color:#fff}
 .sb-ride-feedback{grid-column:1/-1;margin:0;color:#b42318;font:600 13px/1.4 Lato,sans-serif}
 .sb-ride-feedback:empty{display:none}
+.sb-ride-disclaimer{grid-column:1/-1;margin:0;color:#4b5563;font:500 12px/1.5 Lato,sans-serif;text-align:center}
 .sb-ride-form :focus-visible{outline:3px solid #ffb900;outline-offset:2px}
 @media(max-width:767px){.sb-ride-form{grid-template-columns:1fr;gap:10px;margin-top:24px;padding:14px}.sb-ride-submit{width:100%}.sb-hero{min-height:660px;height:auto}.sb-hero-copy{padding:35px 0 55px}}
 @media(max-width:480px){.sb-hero{height:auto;min-height:680px}.sb-hero h1{font-size:34px}.sb-hero-kicker{font-size:15px}}
@@ -159,6 +163,7 @@ a{transition:color .2s ease}
 <div class="sb-ride-field"><label for="ride-drop">Drop location</label><select id="ride-drop" name="drop" required><option value="" selected disabled>Select drop</option><option>Shirdi Sai Baba Temple</option><option>Shirdi Bus Stand</option><option>Sainagar Shirdi Railway Station</option><option>Shirdi Airport</option><option>Hotel in Shirdi</option><option>Shani Shingnapur</option><option>Other location</option></select><input id="ride-drop-other" class="sb-other-location" type="text" placeholder="Enter drop location" aria-label="Other drop location" maxlength="120" hidden></div>
 <button type="submit" class="sb-ride-submit">Book Now <span aria-hidden="true">→</span></button>
 <p id="ride-booking-feedback" class="sb-ride-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+<p class="sb-ride-disclaimer">Your request opens WhatsApp. The ride is confirmed only after availability and fare are confirmed by the driver.</p>
 </form></div>
 <button class="sb-hero-arrow prev" type="button" aria-label="Previous slide">‹</button><button class="sb-hero-arrow next" type="button" aria-label="Next slide">›</button>
 <div class="sb-hero-dots"><button type="button" class="active" aria-label="Slide 1"></button><button type="button" aria-label="Slide 2"></button></div>
