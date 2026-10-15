@@ -41,12 +41,12 @@ a{transition:color .2s ease}
 .menu_main_nav>li.current-menu-item>a{background:#ffb900;color:#fff;border-radius:28px;padding:12px 27px!important}
 .sb-book-link{display:inline-block!important;padding:13px 21px!important;background:#ff9800!important;color:#fff!important;font:700 14px Dosis,sans-serif!important;text-transform:uppercase;letter-spacing:.7px}
 .sb-book-link:hover{background:#e98a00!important;color:#fff!important}
-.sb-hero{position:relative;min-height:760px;height:calc(100vh - 102px);max-height:900px;overflow:hidden;background:#ffb900;color:#fff;display:flex;align-items:center}
+.sb-hero{position:relative;min-height:660px;height:calc(100vh - 102px);max-height:790px;overflow:hidden;background:#ffb900;color:#fff;display:flex;align-items:center}
 .sb-hero-slide{position:absolute;inset:0;background-color:#34302c;background-position:center center;background-size:cover;background-repeat:no-repeat;opacity:0;transition:opacity 1.15s ease-in-out;transform:scale(1.015)}
 .sb-hero-slide.active{opacity:1;animation:sbHeroDrift 7s ease-in-out both}
-.sb-hero-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,174,0,.90) 0%,rgba(255,190,0,.82) 58%,rgba(255,199,0,.62) 100%);mix-blend-mode:screen}
+.sb-hero-slide:after{content:"";position:absolute;inset:0;background:transparent}
 @keyframes sbHeroDrift{0%{transform:scale(1.015)}100%{transform:scale(1.08)}}
-.sb-hero-copy{position:relative;z-index:2;width:min(1240px,calc(100% - 50px));margin:0 auto;text-align:center;padding:18px 0 30px;transform:translateY(0)}
+.sb-hero-copy{position:relative;z-index:2;width:min(1240px,calc(100% - 50px));margin:0 auto;text-align:center;padding:0 0 30px;transform:translateY(-8px)}
 .sb-hero-kicker{font:800 clamp(16px,2.55vw,33px)/1.35 Dosis,sans-serif;text-transform:uppercase;letter-spacing:3px;color:#fff;margin:22px 0 0}
 .sb-hero h1{max-width:1450px;margin:0 auto;color:#fff;font:900 clamp(40px,5.4vw,96px)/1.08 Raleway,sans-serif;letter-spacing:-2px;text-shadow:0 1px 1px #00000008}
 .sb-hero-actions{display:none;justify-content:center;gap:13px;flex-wrap:wrap;margin-top:30px}
@@ -118,7 +118,7 @@ a{transition:color .2s ease}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sb-hero-slide{transition:none;animation:none!important;transform:none!important}}
 
 /* Booking widget: compact desktop layout and accessible mobile stack. */
-.sb-ride-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:12px;align-items:end;width:min(980px,100%);margin:35px auto 0;padding:18px;border-radius:10px;background:#fff;box-shadow:0 14px 45px #0003;text-align:left}
+.sb-booking-band{position:relative;z-index:5;background:#fff;padding:28px 0 38px;border-bottom:1px solid #eee}.sb-booking-heading{text-align:center}.sb-booking-heading h2{margin:0;color:#252525;font:700 clamp(24px,3vw,32px)/1.25 Raleway,sans-serif}.sb-booking-heading p{margin:8px 0 0;color:#777;font-size:15px}.sb-booking-band .sb-ride-form{margin:22px auto 0;box-shadow:0 8px 30px #00000012;border:1px solid #ededed}.sb-booking-band .sb-ride-disclaimer{color:#666}.sb-ride-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:12px;align-items:end;width:min(980px,100%);margin:35px auto 0;padding:18px;border-radius:10px;background:#fff;box-shadow:0 14px 45px #0003;text-align:left}
 .sb-ride-field{min-width:0}
 .sb-ride-field label{display:block;margin:0 0 7px;color:#222;font:700 13px/1.3 Lato,sans-serif}
 .sb-ride-field select,.sb-other-location{box-sizing:border-box;display:block;width:100%;height:48px;padding:0 12px;border:1px solid #cbd1d5;border-radius:6px;background:#fff;color:#242424;font:500 14px Lato,sans-serif}
@@ -130,8 +130,8 @@ a{transition:color .2s ease}
 .sb-ride-feedback:empty{display:none}
 .sb-ride-disclaimer{grid-column:1/-1;margin:0;color:#4b5563;font:500 12px/1.5 Lato,sans-serif;text-align:center}
 .sb-ride-form :focus-visible{outline:3px solid #ffb900;outline-offset:2px}
-@media(max-width:767px){.sb-ride-form{grid-template-columns:1fr;gap:10px;margin-top:24px;padding:14px}.sb-ride-submit{width:100%}.sb-hero{min-height:660px;height:auto}.sb-hero-copy{padding:35px 0 55px}}
-@media(max-width:480px){.sb-hero{height:auto;min-height:680px}.sb-hero h1{font-size:34px}.sb-hero-kicker{font-size:15px}}
+@media(max-width:767px){.sb-ride-form{grid-template-columns:1fr;gap:10px;margin-top:18px;padding:14px}.sb-ride-submit{width:100%}.sb-hero{min-height:480px;height:65vh;max-height:620px}.sb-hero-copy{padding:0 0 25px}.sb-booking-band{padding:25px 0 30px}}
+@media(max-width:480px){.sb-hero{height:590px;min-height:0}.sb-hero h1{font-size:34px}.sb-hero-kicker{font-size:15px}}
 </style>
 </head>
 <body class="home page-template-default page page-id-52 body_tag body_style_wide scheme_default is_stream blog_style_excerpt sidebar_hide expand_content remove_margins header_style_header-default header_position_over header_title_off menu_style_top no_layout">
@@ -158,16 +158,18 @@ a{transition:color .2s ease}
 <section class="sb-hero" id="home" aria-label="Shirdi Booking home">
 <div class="sb-hero-slide active" style="background-image:url('https://www.tukxi.in/wp-content/uploads/2021/01/web_HD2.jpg')"></div>
 <div class="sb-hero-slide" style="background-image:url('https://www.tukxi.in/wp-content/uploads/2021/01/web_HD3.jpg')"></div>
-<div class="sb-hero-copy"><h1>Your everyday ride is here.</h1><p class="sb-hero-kicker">Booking an Auto just got easier</p><div class="sb-hero-actions"><a href="#ride-booking">Book an Auto Now</a><a class="secondary" href="https://wa.me/919307062992?text=Hello%2C%20I%20want%20to%20book%20an%20auto%20in%20Shirdi" target="_blank" rel="noopener">WhatsApp Us</a></div><form id="ride-booking" class="sb-ride-form" aria-label="Book an auto ride">
+<div class="sb-hero-copy"><h1>Your everyday ride is here.</h1><p class="sb-hero-kicker">Booking an Auto just got easier</p><div class="sb-hero-actions"><a href="#ride-booking">Book an Auto Now</a><a class="secondary" href="https://wa.me/919307062992?text=Hello%2C%20I%20want%20to%20book%20an%20auto%20in%20Shirdi" target="_blank" rel="noopener">WhatsApp Us</a></div></div>
+<button class="sb-hero-arrow prev" type="button" aria-label="Previous slide">‹</button><button class="sb-hero-arrow next" type="button" aria-label="Next slide">›</button>
+<div class="sb-hero-dots"><button type="button" class="active" aria-label="Slide 1"></button><button type="button" aria-label="Slide 2"></button></div>
+</section>
+<section class="sb-booking-band" aria-label="Book your auto ride"><div class="content_wrap"><div class="sb-booking-heading"><h2>Where would you like to go?</h2><p>Choose your pickup and drop locations to request a ride.</p></div><form id="ride-booking" class="sb-ride-form" aria-label="Book an auto ride">
 <div class="sb-ride-field"><label for="ride-pickup">Pickup location</label><select id="ride-pickup" name="pickup" required><option value="" selected disabled>Select pickup</option><option>Shirdi Sai Baba Temple</option><option>Shirdi Bus Stand</option><option>Sainagar Shirdi Railway Station</option><option>Shirdi Airport</option><option>Hotel in Shirdi</option><option>Other location</option></select><input id="ride-pickup-other" class="sb-other-location" type="text" placeholder="Enter pickup location" aria-label="Other pickup location" maxlength="120" hidden></div>
 <div class="sb-ride-field"><label for="ride-drop">Drop location</label><select id="ride-drop" name="drop" required><option value="" selected disabled>Select drop</option><option>Shirdi Sai Baba Temple</option><option>Shirdi Bus Stand</option><option>Sainagar Shirdi Railway Station</option><option>Shirdi Airport</option><option>Hotel in Shirdi</option><option>Shani Shingnapur</option><option>Other location</option></select><input id="ride-drop-other" class="sb-other-location" type="text" placeholder="Enter drop location" aria-label="Other drop location" maxlength="120" hidden></div>
 <button type="submit" class="sb-ride-submit">Book Now <span aria-hidden="true">→</span></button>
 <p id="ride-booking-feedback" class="sb-ride-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
 <p class="sb-ride-disclaimer">Your request opens WhatsApp. The ride is confirmed only after availability and fare are confirmed by the driver.</p>
-</form></div>
-<button class="sb-hero-arrow prev" type="button" aria-label="Previous slide">‹</button><button class="sb-hero-arrow next" type="button" aria-label="Next slide">›</button>
-<div class="sb-hero-dots"><button type="button" class="active" aria-label="Slide 1"></button><button type="button" aria-label="Slide 2"></button></div>
-</section>
+</form></div></section>
+
 <section class="sb-section" id="services"><div class="content_wrap"><div class="sb-section-title"><h2>Looking for an Auto? Let's ride.</h2><p>Simple, convenient local transport for your visit to Shirdi.</p></div><div class="sb-feature-grid">
 <article class="sb-feature"><span class="sb-feature-icon icon-cab" aria-hidden="true"></span><h3>Doorstep Pickup</h3><p>We pick you up from your hotel, station or agreed location.</p></article>
 <article class="sb-feature"><span class="sb-feature-icon icon-fixed-price" aria-hidden="true"></span><h3>Clear Fares</h3><p>Confirm the fare with us before your ride begins.</p></article>
