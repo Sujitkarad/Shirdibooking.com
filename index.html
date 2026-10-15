@@ -123,6 +123,8 @@ a{transition:color .2s ease}
 .sb-other-location:not([hidden]){margin-top:8px}
 .sb-ride-submit{height:48px;min-width:154px;padding:0 20px;border:2px solid #000;border-radius:6px;background:#20bf63;color:#fff;font:800 15px Lato,sans-serif;cursor:pointer;white-space:nowrap}
 .sb-ride-submit:hover,.sb-ride-submit:focus-visible{background:#15974c;color:#fff}
+.sb-ride-feedback{grid-column:1/-1;margin:0;color:#b42318;font:600 13px/1.4 Lato,sans-serif}
+.sb-ride-feedback:empty{display:none}
 .sb-ride-form :focus-visible{outline:3px solid #ffb900;outline-offset:2px}
 @media(max-width:767px){.sb-ride-form{grid-template-columns:1fr;gap:10px;margin-top:24px;padding:14px}.sb-ride-submit{width:100%}.sb-hero{min-height:660px;height:auto}.sb-hero-copy{padding:35px 0 55px}}
 @media(max-width:480px){.sb-hero{height:auto;min-height:680px}.sb-hero h1{font-size:34px}.sb-hero-kicker{font-size:15px}}
@@ -156,6 +158,7 @@ a{transition:color .2s ease}
 <div class="sb-ride-field"><label for="ride-pickup">Pickup location</label><select id="ride-pickup" name="pickup" required><option value="" selected disabled>Select pickup</option><option>Shirdi Sai Baba Temple</option><option>Shirdi Bus Stand</option><option>Sainagar Shirdi Railway Station</option><option>Shirdi Airport</option><option>Hotel in Shirdi</option><option>Other location</option></select><input id="ride-pickup-other" class="sb-other-location" type="text" placeholder="Enter pickup location" aria-label="Other pickup location" maxlength="120" hidden></div>
 <div class="sb-ride-field"><label for="ride-drop">Drop location</label><select id="ride-drop" name="drop" required><option value="" selected disabled>Select drop</option><option>Shirdi Sai Baba Temple</option><option>Shirdi Bus Stand</option><option>Sainagar Shirdi Railway Station</option><option>Shirdi Airport</option><option>Hotel in Shirdi</option><option>Shani Shingnapur</option><option>Other location</option></select><input id="ride-drop-other" class="sb-other-location" type="text" placeholder="Enter drop location" aria-label="Other drop location" maxlength="120" hidden></div>
 <button type="submit" class="sb-ride-submit">Book Now <span aria-hidden="true">→</span></button>
+<p id="ride-booking-feedback" class="sb-ride-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
 </form></div>
 <button class="sb-hero-arrow prev" type="button" aria-label="Previous slide">‹</button><button class="sb-hero-arrow next" type="button" aria-label="Next slide">›</button>
 <div class="sb-hero-dots"><button type="button" class="active" aria-label="Slide 1"></button><button type="button" aria-label="Slide 2"></button></div>
@@ -227,18 +230,41 @@ a{transition:color .2s ease}
         var custom=select.value==='Other location';
         other.hidden=!custom;
         other.required=custom;
+        other.setCustomValidity('');
         if(!custom)other.value='';
+        var feedback=document.getElementById('ride-booking-feedback');
+        if(feedback)feedback.textContent='';
       });
+      other.addEventListener('input',function(){other.setCustomValidity('');});
     });
     rideForm.addEventListener('submit',function(event){
       event.preventDefault();
+      var feedback=document.getElementById('ride-booking-feedback');
+      if(feedback)feedback.textContent='';
+      ['pickup','drop'].forEach(function(field){
+        var select=document.getElementById('ride-'+field);
+        var other=document.getElementById('ride-'+field+'-other');
+        if(select.value==='Other location'&&!other.value.trim()){
+          other.setCustomValidity('Please enter the '+field+' location.');
+        }else{
+          other.setCustomValidity('');
+        }
+      });
       if(!rideForm.reportValidity())return;
       function locationValue(field){
         var selected=document.getElementById('ride-'+field);
         return selected.value==='Other location'?document.getElementById('ride-'+field+'-other').value.trim():selected.value;
       }
       var pickup=locationValue('pickup'),drop=locationValue('drop');
-      if(!pickup||!drop)return;
+      if(!pickup||!drop){
+        if(feedback)feedback.textContent='Please enter both pickup and drop locations.';
+        return;
+      }
+      if(pickup.toLocaleLowerCase()===drop.toLocaleLowerCase()){
+        if(feedback)feedback.textContent='Pickup and drop locations are the same. Please choose a different destination.';
+        document.getElementById('ride-drop').focus();
+        return;
+      }
       var message='Hello! I want to book an auto ride in Shirdi.\nPickup: '+pickup+'\nDrop: '+drop+'\nPlease confirm availability and fare.';
       window.location.href='https://wa.me/919307062992?text='+encodeURIComponent(message);
     });
