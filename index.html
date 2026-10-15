@@ -41,12 +41,12 @@ a{transition:color .2s ease}
 .menu_main_nav>li.current-menu-item>a{background:#ffb900;color:#fff;border-radius:28px;padding:12px 27px!important}
 .sb-book-link{display:inline-block!important;padding:13px 21px!important;background:#ff9800!important;color:#fff!important;font:700 14px Dosis,sans-serif!important;text-transform:uppercase;letter-spacing:.7px}
 .sb-book-link:hover{background:#e98a00!important;color:#fff!important}
-.sb-hero{position:relative;min-height:660px;height:calc(100vh - 102px);max-height:790px;overflow:hidden;background:#34302c;color:#fff;display:flex;align-items:center}
+.sb-hero{position:relative;min-height:760px;height:calc(100vh - 102px);max-height:900px;overflow:hidden;background:#ffb900;color:#fff;display:flex;align-items:center}
 .sb-hero-slide{position:absolute;inset:0;background-color:#34302c;background-position:center center;background-size:cover;background-repeat:no-repeat;opacity:0;transition:opacity 1.15s ease-in-out;transform:scale(1.015)}
 .sb-hero-slide.active{opacity:1;animation:sbHeroDrift 7s ease-in-out both}
-.sb-hero-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,.42) 100%)}
+.sb-hero-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,174,0,.90) 0%,rgba(255,190,0,.82) 58%,rgba(255,199,0,.62) 100%);mix-blend-mode:screen}
 @keyframes sbHeroDrift{0%{transform:scale(1.015)}100%{transform:scale(1.08)}}
-.sb-hero-copy{position:relative;z-index:2;width:min(1240px,calc(100% - 50px));margin:0 auto;text-align:center;padding:0 0 30px;transform:translateY(-8px)}
+.sb-hero-copy{position:relative;z-index:2;width:min(1240px,calc(100% - 50px));margin:0 auto;text-align:center;padding:18px 0 30px;transform:translateY(0)}
 .sb-hero-kicker{font:800 clamp(16px,2.55vw,33px)/1.35 Dosis,sans-serif;text-transform:uppercase;letter-spacing:3px;color:#fff;margin:22px 0 0}
 .sb-hero h1{max-width:1450px;margin:0 auto;color:#fff;font:900 clamp(40px,5.4vw,96px)/1.08 Raleway,sans-serif;letter-spacing:-2px;text-shadow:0 1px 1px #00000008}
 .sb-hero-actions{display:none;justify-content:center;gap:13px;flex-wrap:wrap;margin-top:30px}
@@ -118,7 +118,7 @@ a{transition:color .2s ease}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sb-hero-slide{transition:none;animation:none!important;transform:none!important}}
 
 /* Booking widget: compact desktop layout and accessible mobile stack. */
-.sb-ride-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:12px;align-items:end;width:min(980px,100%);margin:35px auto 0;padding:16px;border-radius:12px;background:#fffffff2;box-shadow:0 14px 45px #0003;text-align:left}
+.sb-ride-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:12px;align-items:end;width:min(980px,100%);margin:35px auto 0;padding:18px;border-radius:10px;background:#fff;box-shadow:0 14px 45px #0003;text-align:left}
 .sb-ride-field{min-width:0}
 .sb-ride-field label{display:block;margin:0 0 7px;color:#222;font:700 13px/1.3 Lato,sans-serif}
 .sb-ride-field select,.sb-other-location{box-sizing:border-box;display:block;width:100%;height:48px;padding:0 12px;border:1px solid #cbd1d5;border-radius:6px;background:#fff;color:#242424;font:500 14px Lato,sans-serif}
